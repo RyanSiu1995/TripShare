@@ -7,5 +7,5 @@
 ### how to run app
 1. Make sure that Postgres is running
 2. Make sure you are inside iTravel directory
-3. type ''' rails s '''
-4. Go to '''http://localhost:3000/''' in your browser
+3. type ``` rails s ```
+4. Go to ```http://localhost:3000/``` in your browser
