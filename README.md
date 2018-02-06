@@ -18,7 +18,7 @@
 
 #### References:
 - [1] https://www.railstutorial.org/book (Learn by doing)
-
+- [2] [MVC in action](https://www.railstutorial.org/book/toy_app#sec-mvc_in_action)
 
 # Project Requirement Specification
 
