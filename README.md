@@ -7,7 +7,7 @@
 
 ### postgreSQL:
 1. psql -U postgres
-2. create role myapp with createdb login password 'password1';
+2. create role root with createdb login password 'password1';
 ###### reference: https://www.digitalocean.com/community/tutorials/how-to-setup-ruby-on-rails-with-postgres
 
 ### How to run the app:
@@ -424,6 +424,3 @@ Table of Contents
 5.n.3 Expected Outputs & Pass/Fail Criteria
 6 LESSONS LEARNED
 7 CONCLUSION
-
-
-
