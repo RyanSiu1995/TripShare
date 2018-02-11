@@ -20,7 +20,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'cancancan', '~> 1.10'
-gem 'devise'
+# gem 'devise'
 gem 'simple_form'
 gem 'figaro'
 gem 'faker', '1.6.6'
@@ -36,7 +36,9 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'pry-rails'
+  gem 'rails-controller-testing'
 end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
