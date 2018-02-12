@@ -8,7 +8,28 @@
         <li><a href="/home"> Home </a></li>
         <li><a href="/my_trips"> My Trips </a></li>
         <li><a href="/explore"> Explore </a></li>
-        <li><a href="/signup"> Sign in </a></li>
+        <!-- <li><a href="/signup"> Sign in </a></li> -->
+
+        <% if logged_in? %>
+        <li><%= link_to "Users", '/users' %></li>
+
+        <!-- Dropdown Structure -->
+        <ul id="dropdown1" class="dropdown-content">
+          <li><%= link_to "Profile", current_user %></li>
+          <li><%= link_to "Settings", '#' %></li>
+          <li class="divider"></li>
+          <li> <%= link_to "Log out", logout_path, method: :delete %></li>
+        </ul>
+
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button" href="#!"
+                data-activates="dropdown1">Account<i class="material-icons
+                right">arrow_drop_down</i></a>
+        </li>
+
+        <% else %>
+        <li><%= link_to "Log in", login_path %></li>
+        <% end %>
 
       </ul>
     </div>
