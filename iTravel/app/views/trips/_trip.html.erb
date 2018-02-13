@@ -1,0 +1,8 @@
+<li id="trip-<%= trip.id %>">
+  <%= link_to gravatar_for(trip.user, size: 50), trip.user %>
+  <span class="user"><%= link_to trip.user.name, trip.user %></span>
+  <span class="title"><%= trip.title %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(trip.created_at) %> ago.
+  </span>
+</li>

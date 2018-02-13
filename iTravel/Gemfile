@@ -27,6 +27,9 @@ gem "animate-rails"
 gem 'wow-rails'
 gem 'rails-i18n', '~> 5.0.0' # For 5.0.x and 5.1.x
 gem 'devise-i18n'
+gem 'will_paginate',           '3.1.6'
+gem 'will_paginate-materialize'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
