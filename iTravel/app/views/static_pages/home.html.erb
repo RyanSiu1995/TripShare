@@ -1,31 +1,15 @@
 <% provide(:title, "Home") %>
 <!DOCTYPE html>
 <html>
-<head>
-  <title> <%= yield(:title) %> | iTravel App </title>
-</head>
-<body>
-  <h1> iTravel </h1>
-  <h2> The way you travel </h2>
-  <p>
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-    velit esse cillum dolore eu fugiat nulla pariatur.
-  </p>
-
-  <div class="row">
-    <div class="col s6 offset-s3">
-      <div class="input-field">
-        <%= search_field_tag :search, params[:search], id: "search" %>
-        <label for="search"><i class="material-icons">search</i></label>
-        <i class="material-icons">close</i>
-      </div>
-    </div>
-  </div>
-
-
-
-</body>
+  <head>
+    <title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title>
+  </head>
+  <body>
+    <h1>Sample App</h1>
+    <p>
+      This is the home page for the
+      <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+      sample application.
+    </p>
+  </body>
 </html>

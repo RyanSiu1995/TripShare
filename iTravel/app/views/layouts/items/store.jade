@@ -1,0 +1,28 @@
+extends ../layout
+// Should add time as well
+
+block content
+    h1.
+        #{title}
+    a.btn.btn-primary(href='/items/store/#{first.token_value}/#{last.token_value}/value/#{page}/0/sort') Sort Token Value
+    a.btn.btn-primary(href='/items/store/#{first.createdOn}/#{last.createdOn}/time/#{page}/0/sort') Sort Creation Time
+    if user && user.role == 'admin'
+      a.btn.btn-primary(href='/items/store/csvdownload') Download CSV
+    table.table
+      thead
+        tr
+          th(scope='col') Item Title
+          th(scope='col') Token Value
+          th(scope='col') Available Quantity
+          th(scope='col') Created On
+      - each item, i in items
+          tbody
+            tr
+              th(scope='row')
+                a(href='/items/#{item._id}/show') #{item.title}
+              td #{item.token_value}
+              td #{item.available_quantity}
+              td #{item.createdOn}
+
+    a.btn.btn-info.btn-sm(href='/items/store/#{firsta}/#{lasta}/#{sorted_by}/#{page}/-1/sort') Prev. page
+    a.btn.btn-info.btn-sm(href='/items/store/#{firsta}/#{lasta}/#{sorted_by}/#{page}/1/sort') Next Page

@@ -2,14 +2,36 @@
 <div class="navbar-fixed hide-on-med-and-down" id="inicio">
   <nav class="" role="navigation">
     <div class="nav-wrapper container">
-      <a href="home" class="brand-logo">iTravel</a>
+      <a href="/home" class="brand-logo">iTravel</a>
 
       <ul class="right hide-on-med-and-down">
-        <li><a href="home"> Home </a></li>
-        <li><a href="my_trips"> My Trips </a></li>
-        <li><a href="explore"> Explore </a></li>
-        <li><a href="#!"> Login </a></li>
-        
+        <li><a href="/home"> Home </a></li>
+        <li><a href="/my_trips"> My Trips </a></li>
+        <li><a href="/explore"> Explore </a></li>
+
+
+        <% if user_signed_in? %>
+        <li><%= link_to "Users", '/users' %></li>
+
+        <!-- Dropdown Structure -->
+        <ul id="dropdown1" class="dropdown-content">
+          <li><%= link_to "Profile", current_user %></li>
+          <li><%= link_to "Settings", '#' %></li>
+          <li class="divider"></li>
+          <li> <%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+        </ul>
+
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button" href="#!"
+          data-activates="dropdown1">Account<i class="material-icons
+          right">arrow_drop_down</i></a>
+        </li>
+
+        <% else %>
+        <li><a href="/users/sign_in"> Login </a></li>
+        <% end %>
+
+
       </ul>
     </div>
   </nav>

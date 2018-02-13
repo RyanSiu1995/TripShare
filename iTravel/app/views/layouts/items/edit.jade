@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+    h1.
+        Item ID #{item._id}
+    form(action='/items/#{item._id}/edit',method='post',name='updateitem',
+      enctype='multipart/form-data')
+        
+        p Title: 
+          input#inputName(type='text', value='#{item.title}', name='title')
+        
+        p Token value:
+          input#inputTokenValue(type='number', value='#{item.token_value}', name='token_value')  
+        
+        p Type: 
+          input#inputType(type='number', value='#{item.type}', name='type')
+        
+          p Description:
+            textarea#inputName.form-control(rows='5' type='text', value='#{item.description}', name='description')
+        
+        p Image: 
+          input#inputImage(type='file', value='#{item.image}', name='image')
+        
+        p available_quantity:
+          input#inputAvailable_Quantity(type='number', value='#{item.available_quantity}', name='available_quantity')              
+        
+        p 
+          input(type='hidden',value='PUT',name='_method')
+        p 
+          button#btnSubmit(type='submit').
+            Update
