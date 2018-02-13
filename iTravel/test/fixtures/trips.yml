@@ -1,11 +1,28 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  start_date: 2018-02-13
-  finish_date: 2018-02-13
+# one:
+#   title: MyString
+#   start_date: 2018-02-13
+#   finish_date: 2018-02-13
+#
+# two:
+#   title: MyString
+#   start_date: 2018-02-13
+#   finish_date: 2018-02-13
 
-two:
-  title: MyString
-  start_date: 2018-02-13
-  finish_date: 2018-02-13
+
+orange:
+  title: "I just ate an orange!"
+  created_at: <%= 10.minutes.ago %>
+
+tau_manifesto:
+  title: "Check out the @tauday site by @mhartl: http://tauday.com"
+  created_at: <%= 3.years.ago %>
+
+cat_video:
+  title: "Sad cats are sad: http://youtu.be/PKffm2uI4dk"
+  created_at: <%= 2.hours.ago %>
+
+most_recent:
+  title: "Writing a short test"
+  created_at: <%= Time.zone.now %>
