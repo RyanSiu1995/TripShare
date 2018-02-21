@@ -1,0 +1,23 @@
+<h1> All trips from all users </h1>
+
+<h1> <%= @trips.size %> Trips </h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th> Title </th>
+      <th> Owner </th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trips.each do |trip| %>
+      <tr>
+        <td><%= trip.title %></td>
+        <td><%= trip.user_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
