@@ -17,7 +17,7 @@ class TripsController < ApplicationController
     @trip = current_user.trips.build(trip_params)
     if @trip.save
       flash[:success] = "Trip created!"
-      redirect_to root_url
+      redirect_to current_user
     else
       render 'static_pages/home'
     end
