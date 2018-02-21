@@ -1,12 +1,13 @@
 class TripsController < ApplicationController
   before_action :signed_in?
+  before_action :correct_user,   only: :destroy
 
   def index
     @trips = Trip.all
   end
 
   def show
-    @trip = Trip.find(params[:id])
+    @trip = current_user.trips.find(params[:id])
   end
 
   def new
@@ -24,6 +25,9 @@ class TripsController < ApplicationController
   end
 
   def destroy
+    @trip.destroy
+    flash[:success] = "Trip deleted"
+    redirect_to request.referrer || root_url
   end
 
   private
@@ -31,5 +35,11 @@ class TripsController < ApplicationController
   def trip_params
     params.require(:trip).permit(:title)
   end
+
+  def correct_user
+    @trip = current_user.trips.find_by(id: params[:id])
+    redirect_to root_url if @trip.nil?
+  end
+
 
 end

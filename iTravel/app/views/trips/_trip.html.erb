@@ -3,6 +3,9 @@
   <span class="user"><%= link_to trip.user.name, trip.user %></span>
   <span class="title"><%= trip.title %></span>
   <span class="timestamp">
-    Posted <%= time_ago_in_words(trip.created_at) %> ago. 
+    Posted <%= time_ago_in_words(trip.created_at) %> ago.
   </span>
+
+  <%= link_to "delete", trip, method: :delete, data: { confirm: "You sure?" } %>
+
 </li>
