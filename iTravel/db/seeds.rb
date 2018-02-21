@@ -36,6 +36,6 @@ end
 
 users = User.order(:created_at).take(6)
 10.times do
-  title = Faker::Lorem.sentence(5)
+  title = Faker::Lorem.sentence(2)
   users.each { |user| user.trips.create!(title: title) }
 end

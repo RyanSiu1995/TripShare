@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Edit', edit_trip_path(@trip) %> |
+<%= link_to 'Back', trips_path %>
+
+<% provide(:title, @trip.title) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="trip_info">
+      <h1>
+        <%= @trip.trip %>
+      </h1>
+    </section>
+
+</div>
