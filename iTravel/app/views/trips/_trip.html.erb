@@ -6,6 +6,9 @@
     Posted <%= time_ago_in_words(trip.created_at) %> ago.
   </span>
 
-  <%= link_to "delete", trip, method: :delete, data: { confirm: "You sure?" } %>
+  <!--  Checks that only the owner of the resource can delete the post-->
+  <% if current_user.id == trip.user_id %>
+    <%= link_to "delete", trip, method: :delete, data: { confirm: "You sure?" } %>
+  <% end %>
 
 </li>
