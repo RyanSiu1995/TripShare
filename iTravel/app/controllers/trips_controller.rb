@@ -9,8 +9,7 @@ class TripsController < ApplicationController
   end
 
   def show
-    # @user = User.find(params[:id])
-    @trip = current_user.trips.find_by(id: params[:id])
+    @trip = Trip.find(params[:id])
   end
 
   def new
