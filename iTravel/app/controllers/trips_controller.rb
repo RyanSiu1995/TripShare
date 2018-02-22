@@ -1,13 +1,16 @@
 class TripsController < ApplicationController
-  before_action :signed_in?
-  before_action :correct_user,   only: :destroy
+  load_and_authorize_resource
+  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_action :correct_user,   only: [:edit, :update]
 
   def index
     @trips = Trip.all
   end
 
   def show
-    @trip = current_user.trips.find(params[:id])
+    # @user = User.find(params[:id])
+    @trip = current_user.trips.find_by(id: params[:id])
   end
 
   def new
@@ -23,6 +26,16 @@ class TripsController < ApplicationController
       render 'static_pages/home'
     end
   end
+
+  def update
+    if @trip.update_attributes(trip_params)
+      flash[:success] = "Trip updated"
+      redirect_to @trip
+    else
+      render 'edit'
+    end
+  end
+
 
   def destroy
     @trip.destroy

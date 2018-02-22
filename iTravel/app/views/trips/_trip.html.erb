@@ -13,7 +13,9 @@
         </span>
       </div>
       <div class="card-action">
-        <a href="#"> More </a>
+
+        <%= link_to "More", trip %>
+
 
         <!--  Checks that only the owner of the resource can delete the post-->
         <% if current_user.id == trip.user_id %>
