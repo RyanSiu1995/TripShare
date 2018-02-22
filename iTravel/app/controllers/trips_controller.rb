@@ -45,7 +45,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:title)
+    params.require(:trip).permit(:title, :start_date, :finish_date, :country)
   end
 
   def correct_user

@@ -2,5 +2,15 @@
   <div class="field">
     <%= f.text_field :title, placeholder: "Name a new trip..." %>
   </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
+  <div class="field">
+    <%= f.text_field :country, placeholder: "Country" %>
+  </div>
+  <div class="datepicker">
+    <%= f.date_field :start_date, placeholder: "Start date" %>
+  </div>
+  <div class="datepicker">
+    <%= f.date_field :finish_date, placeholder: "Finish date" %>
+  </div>
+
+  <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>
