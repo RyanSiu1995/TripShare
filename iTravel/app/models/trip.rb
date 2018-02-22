@@ -4,5 +4,7 @@ class Trip < ApplicationRecord
   validates :title, presence: true
   validates :country, presence: true
   default_scope -> { order(created_at: :desc) }
+  acts_as_votable
+
 
 end

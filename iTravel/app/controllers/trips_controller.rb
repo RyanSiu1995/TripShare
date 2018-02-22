@@ -35,6 +35,10 @@ class TripsController < ApplicationController
     end
   end
 
+  def like
+    # @trip.liked_by current_user
+  end
+
 
   def destroy
     @trip.destroy
