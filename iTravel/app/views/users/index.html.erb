@@ -13,8 +13,6 @@
 
 <h1>Users</h1>
 
-<%= link_to 'New User', new_user_path %>
-
 <table>
   <thead>
     <tr>
@@ -25,6 +23,7 @@
 
   <tbody>
     <% @users.each do |user| %>
+      <!-- TODO check for 0 users  -->
       <tr>
         <td><%= link_to user.name, user %></td>
         <td><%= user.email %></td>
