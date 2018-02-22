@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
 
+  load_and_authorize_resource
   before_action :authenticate_user!, only: [:index, :edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
-  # Admin should be able to destroy
-  # before_filter :admin_user,     only: :destroy
 
 
   # GET /users
