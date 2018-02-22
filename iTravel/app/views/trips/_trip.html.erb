@@ -1,14 +1,30 @@
-<li id="trip-<%= trip.id %>">
-  <%= link_to gravatar_for(trip.user, size: 50), trip.user %>
-  <span class="user"><%= link_to trip.user.name, trip.user %></span>
-  <span class="title"><%= trip.title %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(trip.created_at) %> ago.
-  </span>
+  <div class="row">
+    <div class="col s4 offset-s2">
+    <div class="card">
+      <div class="card-image">
+        <img src="https://picsum.photos/200/200/?random">  <!-- TODO  insert main image of trip, otherweise user default -->
+        <span class="card-title"><%= trip.title %></span>
+      </div>
+      <div class="card-content">
+        <p>I am a very simple card. I am good at containing small bits of information.
+        I am convenient because I require little markup to use effectively.</p>
+        <span class="timestamp right">
+          Posted <%= time_ago_in_words(trip.created_at) %> ago.
+        </span>
+      </div>
+      <div class="card-action">
+        <a href="#"> More </a>
 
-  <!--  Checks that only the owner of the resource can delete the post-->
-  <% if current_user.id == trip.user_id %>
-    <%= link_to "delete", trip, method: :delete, data: { confirm: "You sure?" } %>
-  <% end %>
+        <!--  Checks that only the owner of the resource can delete the post-->
+        <% if current_user.id == trip.user_id %>
+          <%= link_to "delete", trip, method: :delete, data: { confirm: "You sure?" } %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 </li>
