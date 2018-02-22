@@ -8,9 +8,10 @@
 
 
 User.create!(name:  "Satoshi Nakamoto",
-             email: "satoshi@nakamoto.com",
-             password:              "foobar",
-             password_confirmation: "foobar")
+             email: "admin@mail.com",
+             admin: true,
+             password:              "123456",
+             password_confirmation: "123456")
 
 User.create!(name:  "uno",
               email: "uno@mail.com",
@@ -36,6 +37,6 @@ end
 
 users = User.order(:created_at).take(6)
 10.times do
-  title = Faker::Lorem.sentence(2)
+  title = Faker::Address.country #=> "French Guiana"
   users.each { |user| user.trips.create!(title: title) }
 end
