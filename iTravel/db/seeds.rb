@@ -13,13 +13,13 @@ User.create!(name:  "Satoshi Nakamoto",
              password:              "123456",
              password_confirmation: "123456")
 
-User.create!(name:  "uno",
-              email: "uno@mail.com",
+User.create!(name:  "one",
+              email: "one@mail.com",
               password: "123456",
               password_confirmation: "123456")
 
-User.create!(name:  " dos",
-              email: "dos@mail.com",
+User.create!(name:  " two",
+              email: "two@mail.com",
               password:              "123456",
               password_confirmation: "123456")
 
@@ -43,7 +43,7 @@ users = User.order(:created_at).take(6)
     likes = Faker::Number.between(0, 100) #=> 7
     start_date = Faker::Date.backward(100) #=> "Fri, 19 Sep 2014"
     finish_date = Faker::Date.backward(14) #=> "Fri, 19 Sep 2014"
-    
+
     user.trips.create!(title: title, country: country,
     cached_votes_total: likes, start_date: start_date,
     finish_date: finish_date)}
