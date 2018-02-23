@@ -6,5 +6,12 @@ class Trip < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
   acts_as_votable
 
+  def self.search(search)
+    # Title is for the above case, the OP incorrectly had 'name'
+    where("lower(country) LIKE ?", "%#{search}%")
+
+  end
+
+
 
 end

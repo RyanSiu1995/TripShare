@@ -19,7 +19,7 @@
 #### References:
 - [1] https://www.railstutorial.org/book (Learn by doing)
 - [2] [MVC in action](https://www.railstutorial.org/book/toy_app#sec-mvc_in_action)
-
+- [3] [Search in rails] (https://stackoverflow.com/questions/12010780/search-in-rails)
 # Project Requirement Specification
 
 ## 1. Objective:

@@ -5,7 +5,12 @@ class TripsController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
 
   def index
-    @trips = Trip.all.sort_by(&:cached_votes_total).reverse
+    # @trips = Trip.all.sort_by(&:cached_votes_total).reverse
+    if params[:search]
+      @trips = Trip.search(params[:search]).order("created_at DESC")
+    else
+      @trips = Trip.all.order('created_at DESC')
+    end
   end
 
   def show

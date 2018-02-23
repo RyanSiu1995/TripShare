@@ -4,19 +4,23 @@
 
 <!-- TODO check for 0 trips  -->
 
+<%= render "search_bar" %>
+
 <table>
   <thead>
     <tr>
+      <th> Country </th>
       <th> Title </th>
       <th> Owner </th>
       <th> Likes </th>
-      <th colspan="2"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @trips.each do |trip| %>
       <tr>
+        <td><%= link_to trip.country, trip %></td>
         <td><%= link_to trip.title, trip %></td>
         <td><%= link_to trip.user.name, trip.user %></td>
         <td><%= trip.cached_votes_total %></td>
