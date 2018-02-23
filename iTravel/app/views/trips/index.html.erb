@@ -19,7 +19,7 @@
       <tr>
         <td><%= link_to trip.title, trip %></td>
         <td><%= link_to trip.user.name, trip.user %></td>
-        <td><%= trip.votes_for.size %></td>
+        <td><%= trip.cached_votes_total %></td>
       </tr>
     <% end %>
   </tbody>

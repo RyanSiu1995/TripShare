@@ -5,7 +5,7 @@ class TripsController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
 
   def index
-    @trips = Trip.all.sort_by(&:weighted_total).reverse
+    @trips = Trip.all.sort_by(&:cached_votes_total).reverse
   end
 
   def show

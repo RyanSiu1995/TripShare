@@ -16,17 +16,19 @@
       <h5> From: <%= @trip.start_date %> </h5>
       <h5> To: <%= @trip.finish_date %> </h5>
 
-      <h5> Likes: <%= @trip.votes_for.size %> </h5>
+      <h5> Likes: <%= @trip.cached_votes_total %> </h5>
 
 
       <% if user_signed_in? %>
         <% if (current_user.liked? @trip) %>
           <%= button_to 'Unlike', {:controller => "trips", :action => "like"}, :method=>:post, params: { id: @trip.id }  %>
+          <i class="material-icons left">favorite</i>
         <% else %>
           <%= button_to 'Like', {:controller => "trips", :action => "like"}, :method=>:post, params: { id: @trip.id }  %>
+          <i class="material-icons left">favorite_border</i>
         <% end %>
       <% end %>
-      
+
     </section>
 
 </div>

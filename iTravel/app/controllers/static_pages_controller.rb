@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
   def home
     number_of_trips =  Trip.all.size
     top_number = 15
-    @trips = Trip.all.sort_by(&:cached_weighted_score).reverse
+    @trips = Trip.all.sort_by(&:cached_votes_total).reverse
     @top_trips = @trips.first(top_number)
   end
 

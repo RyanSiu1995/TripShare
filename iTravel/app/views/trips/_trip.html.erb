@@ -8,23 +8,23 @@
       <div class="card-content">
         <p>I am a very simple card. I am good at containing small bits of information.
           I am convenient because I require little markup to use effectively.</p>
-          <span class="timestamp right">
+          <span class="timestamp">
             Posted <%= time_ago_in_words(trip.created_at) %> ago.
           </span>
         </div>
         <div class="card-action">
+          <span>
+            <%= link_to "More", trip %>
+          </span>
 
-          <%= link_to "More", trip %>
-          Likes: <%= trip.votes_for.size %>
+          <span class="right">
+            <%= trip.cached_votes_total %>
+            <i class="material-icons right">favorite</i>
+
+          </span>
 
           <!-- TODO Checks that only the owner of the resource can delete the post-->
           <% if user_signed_in?  %>
-          <form action="#">
-            <p>
-              <input type="checkbox" id="test5" />
-              <label for="test5">Red</label>
-            </p>
-          </form>
             <% if (current_user.id == trip.user_id) %>
             <%= link_to "delete", trip, method: :delete, data: { confirm: "You sure?" } %>
             <% end %>
