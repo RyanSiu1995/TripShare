@@ -1,11 +1,11 @@
 class TripsController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!, except: [:index]
-  before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy, :like]
   before_action :correct_user,   only: [:edit, :update]
 
   def index
-    @trips = Trip.all
+    @trips = @trips.sort_by(&:weighted_total).reverse
   end
 
   def show
@@ -36,7 +36,16 @@ class TripsController < ApplicationController
   end
 
   def like
-    # @trip.liked_by current_user
+    @trip = Trip.find(params[:id])
+
+    if current_user.liked? @trip
+      @trip.unliked_by current_user
+    else
+      @trip.liked_by current_user
+    end
+
+    redirect_to trip_path
+
   end
 
 

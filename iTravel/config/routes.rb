@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get    '/explore',    to: 'trips#index'
   get    '/login',    to: 'devise/sessions#create'
 
+  post '/like/:id', to: 'trips#like'
+
 end

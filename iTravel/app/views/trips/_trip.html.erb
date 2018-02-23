@@ -1,5 +1,5 @@
-  <div class="row">
-    <div class="col s4 offset-s2">
+<div class="row">
+  <div class="col s4 offset-s2">
     <div class="card">
       <div class="card-image">
         <img src="https://picsum.photos/200/200/?random">  <!-- TODO  insert main image of trip, otherweise user default -->
@@ -7,25 +7,33 @@
       </div>
       <div class="card-content">
         <p>I am a very simple card. I am good at containing small bits of information.
-        I am convenient because I require little markup to use effectively.</p>
-        <span class="timestamp right">
-          Posted <%= time_ago_in_words(trip.created_at) %> ago.
-        </span>
-      </div>
-      <div class="card-action">
+          I am convenient because I require little markup to use effectively.</p>
+          <span class="timestamp right">
+            Posted <%= time_ago_in_words(trip.created_at) %> ago.
+          </span>
+        </div>
+        <div class="card-action">
 
-        <%= link_to "More", trip %>
+          <%= link_to "More", trip %>
+          Likes: <%= trip.votes_for.size %>
 
+          <!-- TODO Checks that only the owner of the resource can delete the post-->
+          <% if user_signed_in?  %>
+          <form action="#">
+            <p>
+              <input type="checkbox" id="test5" />
+              <label for="test5">Red</label>
+            </p>
+          </form>
+            <% if (current_user.id == trip.user_id) %>
+            <%= link_to "delete", trip, method: :delete, data: { confirm: "You sure?" } %>
+            <% end %>
+          <% end %>
 
-        <!--  Checks that only the owner of the resource can delete the post-->
-        <% if user_signed_in? && (current_user.id == trip.user_id) %>
-          <%= link_to "delete", trip, method: :delete, data: { confirm: "You sure?" } %>
-        <% end %>
-
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 
 

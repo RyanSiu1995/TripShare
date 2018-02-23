@@ -9,6 +9,7 @@
     <tr>
       <th> Title </th>
       <th> Owner </th>
+      <th> Likes </th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
       <tr>
         <td><%= link_to trip.title, trip %></td>
         <td><%= link_to trip.user.name, trip.user %></td>
+        <td><%= trip.votes_for.size %></td>
       </tr>
     <% end %>
   </tbody>
