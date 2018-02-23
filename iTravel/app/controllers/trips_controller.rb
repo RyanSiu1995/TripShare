@@ -5,7 +5,17 @@ class TripsController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
 
   def index
-    @trips = @trips.sort_by(&:weighted_total).reverse
+
+    number_of_trips =  Trip.all.size
+    top_number = 10
+    @trips = Trip.all.sort_by(&:weighted_total).reverse
+
+    # TODO - Sort, then display top # if any
+    # if number_of_trips >= top_number
+    # else
+    # end
+
+
   end
 
   def show
