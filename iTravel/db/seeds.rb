@@ -37,12 +37,14 @@ end
 
 users = User.order(:created_at).take(6)
 10.times do
-  title = Faker::Lorem.sentence #=> "Dolore illum animi et neque accusantium."
-  country = Faker::Address.country #=> "French Guiana"
-  likes = Faker::Number.between(0, 100) #=> 7
-  start_date = Faker::Date.backward(100) #=> "Fri, 19 Sep 2014"
-  finish_date = Faker::Date.backward(14) #=> "Fri, 19 Sep 2014"
-  users.each { |user| user.trips.create!(title: title, country: country,
+  users.each { |user|
+    title = Faker::Lorem.sentence #=> "Dolore illum animi et neque accusantium."
+    country = Faker::Address.country #=> "French Guiana"
+    likes = Faker::Number.between(0, 100) #=> 7
+    start_date = Faker::Date.backward(100) #=> "Fri, 19 Sep 2014"
+    finish_date = Faker::Date.backward(14) #=> "Fri, 19 Sep 2014"
+    
+    user.trips.create!(title: title, country: country,
     cached_votes_total: likes, start_date: start_date,
     finish_date: finish_date)}
 end
