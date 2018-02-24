@@ -32,7 +32,8 @@ $('.datepicker').pickadate({
 $(document).ready(function(){
   $('.slider').slider({
       full_width: false,
-      indicators: false,
+      indicators: false
+
   });
 });
 
