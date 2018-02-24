@@ -29,15 +29,15 @@ $('.datepicker').pickadate({
   closeOnSelect: false // Close upon selecting a date,
 });
 
-$('input.autocomplete').autocomplete({
-  data: {
-    "Apple": null,
-    "Microsoft": null,
-    "Google": 'https://placehold.it/250x250'
-  },
-  limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
-  onAutocomplete: function(val) {
-    // Callback function when value is autcompleted.
-  },
-  minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+$(document).ready(function(){
+  $('.slider').slider({
+      full_width: false,
+      indicators: false,
+  });
 });
+
+
+// indicators	Set to false to hide slide indicators. (Default: True)
+// height	Set height of slider. (Default: 400)
+// transition	Set the duration of the transition animation in ms. (Default: 500)
+// interval	Set the duration between transitions in ms. (Default: 6000)
