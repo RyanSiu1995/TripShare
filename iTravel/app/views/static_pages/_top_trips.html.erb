@@ -1,3 +1,9 @@
-<h1>Top <%= @top_trips.size %> Trips</h1>
+<h2 class="center"> Top <%= @top_trips.size %> trips </h2>
 
-<%= render @top_trips %>
+<div class="container">
+  <div class="row">
+    <div class="col s12 cards-container">
+      <%= render @top_trips %>
+    </div>
+  </div>
+</div>
