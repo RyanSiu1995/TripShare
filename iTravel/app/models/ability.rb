@@ -9,6 +9,8 @@ class Ability
     else
       can :read, :all
       can :manage, Trip
+      can :manage, User
+      cannot :destroy, User
     end
 
     # Define abilities for the passed in user here. For example:

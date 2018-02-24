@@ -33,6 +33,10 @@ $(document).ready(function(){
   $('.slider').slider({
       indicators: false
   });
+
+  $('.parallax').parallax({
+  });
+
 });
 
 
