@@ -23,11 +23,16 @@ class TripsController < ApplicationController
 
   def create
     @trip = current_user.trips.build(trip_params)
-    if @trip.save
-      flash[:success] = "Trip created!"
-      redirect_to current_user
-    else
-      render 'static_pages/home'
+    respond_to do |format|
+
+      if @trip.save
+        # flash[:success] = "Trip created!"
+        format.html { redirect_to @trip, notice: 'Trip was successfully created.' }
+        format.json { render :show, status: :created, location: @trip }
+      else
+        format.html { render :new }
+        format.json { render json: @trip.errors, status: :unprocessable_entity }
+      end
     end
   end
 
