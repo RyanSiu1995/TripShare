@@ -13,6 +13,12 @@ class TripsController < ApplicationController
     end
   end
 
+  # GET /users/1/edit
+  def edit
+    @trip = Trip.find(params[:id])
+  end
+
+
   def show
     @trip = Trip.find(params[:id])
   end

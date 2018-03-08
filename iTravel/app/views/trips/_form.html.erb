@@ -4,12 +4,12 @@
     <div class="card-content">
       <%= form_for(@trip) do |f| %>
 
-      <% if trip.errors.any? %>
+      <% if @trip.errors.any? %>
       <div id="error_explanation">
-        <h5><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h5>
+        <h5><%= pluralize(@trip.errors.count, "error") %> prohibited this trip from being saved:</h5>
 
         <ul>
-          <% trip.errors.full_messages.each do |message| %>
+          <% @trip.errors.full_messages.each do |message| %>
           <li><%= message %></li>
           <% end %>
         </ul>
@@ -28,7 +28,7 @@
       <div class="datepicker">
         <%= f.date_field :finish_date, placeholder: "Finish date" %>
       </div>
-      
+
       <div class="text-center">
         <%= f.submit "Submit", class: "btn btn-primary" %>
       </div>
