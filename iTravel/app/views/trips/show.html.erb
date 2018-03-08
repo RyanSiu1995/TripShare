@@ -18,17 +18,27 @@
 
       <h5> Likes: <%= @trip.cached_votes_total %> </h5>
 
+      <div class="col">
+        <% if @trip.cities.any? %>
+        <h3>Cities (<%= @trip.cities.count %>)</h3>
+        <ol class="cities">
+          <%= render @cities %>
+        </ol>
+        <% end %>
+      </div>
+
+
 
       <% if user_signed_in? %>
-        <% if (current_user.liked? @trip) %>
-          <%= button_to 'Unlike', {:controller => "trips", :action => "like"}, :method=>:post, params: { id: @trip.id }  %>
-          <i class="material-icons left">favorite</i>
-        <% else %>
-          <%= button_to 'Like', {:controller => "trips", :action => "like"}, :method=>:post, params: { id: @trip.id }  %>
-          <i class="material-icons left">favorite_border</i>
-        <% end %>
+      <% if (current_user.liked? @trip) %>
+      <%= button_to 'Unlike', {:controller => "trips", :action => "like"}, :method=>:post, params: { id: @trip.id }  %>
+      <i class="material-icons left">favorite</i>
+      <% else %>
+      <%= button_to 'Like', {:controller => "trips", :action => "like"}, :method=>:post, params: { id: @trip.id }  %>
+      <i class="material-icons left">favorite_border</i>
+      <% end %>
       <% end %>
 
     </section>
 
-</div>
+  </div>

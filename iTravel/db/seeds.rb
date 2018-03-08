@@ -44,7 +44,17 @@ users = User.order(:created_at).take(6)
     start_date = Faker::Date.backward(100) #=> "Fri, 19 Sep 2014"
     finish_date = Faker::Date.backward(14) #=> "Fri, 19 Sep 2014"
 
-    user.trips.create!(title: title, country: country,
+    trip = user.trips.create!(title: title, country: country,
     cached_votes_total: likes, start_date: start_date,
-    finish_date: finish_date)}
+    finish_date: finish_date)
+
+    description = Faker::Lorem.sentence #=> "Dolore illum animi et neque accusantium."
+    city = Faker::Address.city #=> "French Guiana"
+    #
+    trip.cities.create!(name: city, description: description)
+
+    }
+
+
+
 end

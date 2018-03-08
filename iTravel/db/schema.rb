@@ -16,19 +16,13 @@ ActiveRecord::Schema.define(version: 20180223040403) do
   enable_extension "plpgsql"
 
   create_table "cities", force: :cascade do |t|
-    t.string "recommendations", default: [], array: true
+    t.string "name"
+    t.string "description"
+    t.bigint "trip_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "relationships", force: :cascade do |t|
-    t.integer "liker_id"
-    t.integer "liked_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["liked_id"], name: "index_relationships_on_liked_id"
-    t.index ["liker_id", "liked_id"], name: "index_relationships_on_liker_id_and_liked_id", unique: true
-    t.index ["liker_id"], name: "index_relationships_on_liker_id"
+    t.index ["trip_id", "created_at"], name: "index_cities_on_trip_id_and_created_at"
+    t.index ["trip_id"], name: "index_cities_on_trip_id"
   end
 
   create_table "trips", force: :cascade do |t|
@@ -83,5 +77,6 @@ ActiveRecord::Schema.define(version: 20180223040403) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
+  add_foreign_key "cities", "trips"
   add_foreign_key "trips", "users"
 end

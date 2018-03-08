@@ -1,5 +1,6 @@
 class Trip < ApplicationRecord
   belongs_to :user
+  has_many :cities, dependent: :destroy
   validates :user_id, presence: true
   validates :title, presence: true
   validates :country, presence: true
