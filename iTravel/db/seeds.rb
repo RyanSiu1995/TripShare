@@ -36,6 +36,7 @@ end
 
 
 users = User.order(:created_at).take(6)
+
 10.times do
   users.each { |user|
     title = Faker::Lorem.sentence #=> "Dolore illum animi et neque accusantium."
@@ -50,9 +51,12 @@ users = User.order(:created_at).take(6)
 
     description = Faker::Lorem.sentence #=> "Dolore illum animi et neque accusantium."
     city = Faker::Address.city #=> "French Guiana"
-    #
-    trip.cities.create!(name: city, description: description)
 
+    random_cities = rand(2..15)
+
+    random_cities.times do
+      trip.cities.create!(name: city, description: description)
+    end
     }
 
 
