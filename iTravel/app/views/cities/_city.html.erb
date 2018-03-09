@@ -1,7 +1,12 @@
-<li id="city-<%= city.id %>">
-  <span class="name"><%= city.name %></span>
-  <span class="content"><%= city.description %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(city.created_at) %> ago.
-  </span>
-</li>
+
+  <li id="city-<%= city.id %>">
+    <div class="collapsible-header"><i class="material-icons">location_city</i>
+      <%= city.name %>
+      <span class="timestamp right"> Created <%= time_ago_in_words(city.created_at) %> ago.</span>
+
+    </div>
+    <div class="collapsible-body">
+      <%= city.description %>
+      <%= link_to 'More fix', trips_path, class: "right" %>
+    </div>
+  </li>

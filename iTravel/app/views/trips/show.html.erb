@@ -1,44 +1,54 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_trip_path(@trip) %> |
-<%= link_to 'Back', trips_path %>
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <h1 class='text-center'> <%= @trip.title %> </h1>
+      <h3 class='text-center grey-text lighten-3'>
+        @<%= @trip.country %>
+      </h3>
+      <div class="text-center">
 
-<% provide(:title, @trip.title) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="trip_info">
-      <h1>
-        <%= @trip.title %>
-      </h1>
-      <h2>
-        <%= @trip.country %>
-      </h2>
-      <h5> From: <%= @trip.start_date %> </h5>
-      <h5> To: <%= @trip.finish_date %> </h5>
-
-      <h5> Likes: <%= @trip.cached_votes_total %> </h5>
-
-      <div class="col">
-        <% if @trip.cities.any? %>
-        <h3>Cities (<%= @trip.cities.count %>)</h3>
-        <ol class="cities">
-          <%= render @cities %>
-        </ol>
-        <% end %>
       </div>
 
-
-
-      <% if user_signed_in? %>
-      <% if (current_user.liked? @trip) %>
-      <%= button_to 'Unlike', {:controller => "trips", :action => "like"}, :method=>:post, params: { id: @trip.id }  %>
-      <i class="material-icons left">favorite</i>
-      <% else %>
-      <%= button_to 'Like', {:controller => "trips", :action => "like"}, :method=>:post, params: { id: @trip.id }  %>
-      <i class="material-icons left">favorite_border</i>
-      <% end %>
-      <% end %>
-
-    </section>
-
+    </div>
   </div>
+
+<div class="">
+  <h6 class='text-center'>
+    <% if user_signed_in? %>
+      <% if (current_user.liked? @trip) %>
+        <%= button_to 'Unlike', {:controller => "trips", :action => "like"}, :method=>:post, params: { id: @trip.id }  %>
+        <i class="material-icons center">favorite</i>
+      <% else %>
+        <%= button_to 'Like', {:controller => "trips", :action => "like"}, :method=>:post, params: { id: @trip.id }  %>
+        <i class="material-icons center">favorite_border</i>
+      <% end %>
+    <% end %>
+  </h6>
+  <h6 class='text-right grey-text lighten-3'>
+    <%= link_to 'Edit', edit_trip_path(@trip) %> |
+    <%= link_to 'Back', user_path(@trip.user) %>
+  </h6>
+</div>
+
+
+  <hr>
+
+
+  <div class="row">
+    <% if @trip.cities.any? %>
+
+    <h5 class='text-left grey-text lighten-3'>
+      <%= @trip.cities.count %>
+      <%= "City".pluralize(@trip.cities.count) %>
+    </h5>
+
+    <ul class="collapsible" data-collapsible="accordion">
+      <%= render @cities %>
+    </ul>
+    <% end %>
+  </div>
+</div>
+
+</div>
