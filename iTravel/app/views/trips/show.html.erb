@@ -14,12 +14,14 @@
     </div>
   </div>
 
-    <% if user_signed_in? %>
+  <% if user_signed_in? %>
 
-      <a class="waves-effect waves-light btn">Add city</a>
+    <% if current_user.id == @trip.user.id%>
+      <%= render "cities/new_city_button" %>
+    <% end %>
 
-      <div class="">
-        <h6 class='text-center'>
+  <div class="">
+    <h6 class='text-center'>
 
       <% if (current_user.liked? @trip) %>
         <%= button_to 'Unlike', {:controller => "trips", :action => "like"}, :method=>:post, params: { id: @trip.id }  %>
@@ -28,13 +30,13 @@
         <%= button_to 'Like', {:controller => "trips", :action => "like"}, :method=>:post, params: { id: @trip.id }  %>
         <i class="material-icons center">favorite_border</i>
       <% end %>
-    <% end %>
-  </h6>
-  <h6 class='text-right grey-text lighten-3'>
-    <%= link_to 'Edit', edit_trip_path(@trip) %> |
-    <%= link_to 'Back', user_path(@trip.user) %>
-  </h6>
-</div>
+  <% end %>
+    </h6>
+    <h6 class='text-right grey-text lighten-3'>
+      <%= link_to 'Edit', edit_trip_path(@trip) %> |
+      <%= link_to 'Back', user_path(@trip.user) %>
+    </h6>
+  </div>
 
 
   <hr>
@@ -54,5 +56,3 @@
     <% end %>
   </div>
 </div>
-
-<%= render "cities/new_city_button" %>
