@@ -8,6 +8,7 @@ class Ability
       can :manage, :all
     else
       can :read, :all
+      can :manage, City
       can :manage, Trip
       can :manage, User
       cannot :destroy, User

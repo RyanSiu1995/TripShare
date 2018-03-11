@@ -14,9 +14,13 @@
     </div>
   </div>
 
-<div class="">
-  <h6 class='text-center'>
     <% if user_signed_in? %>
+
+      <a class="waves-effect waves-light btn">Add city</a>
+
+      <div class="">
+        <h6 class='text-center'>
+
       <% if (current_user.liked? @trip) %>
         <%= button_to 'Unlike', {:controller => "trips", :action => "like"}, :method=>:post, params: { id: @trip.id }  %>
         <i class="material-icons center">favorite</i>
@@ -51,4 +55,4 @@
   </div>
 </div>
 
-</div>
+<%= render "cities/new_city_button" %>

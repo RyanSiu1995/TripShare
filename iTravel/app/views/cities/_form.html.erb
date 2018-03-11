@@ -1,0 +1,37 @@
+
+<div class="col s10 offset-s1 m6 offset-m3">
+  <div class="card">
+    <div class="card-content">
+      <%= form_for(@city) do |f| %>
+
+      <% if @city.errors.any? %>
+      <div id="error_explanation">
+        <h5><%= pluralize(@city.errors.count, "error") %> prohibited this city from being saved:</h5>
+
+        <ul>
+          <% @city.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+
+      <div class="field">
+        <%= f.text_field :name, placeholder: "Name a new city..." %>
+      </div>
+
+      <div class="field">
+        <%= f.text_field :description, placeholder: "Description" %>
+      </div>
+
+      <div class="text-center">
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+      </div>
+
+      <div class="text-center">
+        <%= link_to 'Back fix', current_user %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

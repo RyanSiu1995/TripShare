@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :trips
+  resources :cities
 
   root 'static_pages#home'
 
