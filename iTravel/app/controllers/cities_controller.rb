@@ -8,7 +8,8 @@ class CitiesController < ApplicationController
   end
 
   def new
-    @trip = current_user.trips.cities.new
+    @trip = Trip.find(params[:id])
+    @city = @trip.cities.new
   end
 
   def show
