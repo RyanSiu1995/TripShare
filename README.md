@@ -1,22 +1,66 @@
 # CSCI 3100 Software Engineering
 
-## Setup:
+## Docker Setup:
+This application support the docker. Please follow the instructions to build the images and run the application.
+1. Navigate to the application folder
+    ```bash
+    cd ./iTravel
+    ```
+2. Build the image of the application
+    ```bash
+    sudo docker-compose build 
+    ```
+3. Launch the image
+    ```bash
+    sudo docker-compose up
+    ```
+4. Open another terminal and navigate back to application folder. Send the DB reset signal to the containers.
+    ```bash
+    cd ./iTravel
+    sudo docker-compose run rails db:reset
+    ```
+5. You can now access the application through http://localhost:3000
 
-### Install ruby on rails:
-- http://installrails.com/ (pretty straight forward tutorial to install this framework)
+## Local Setup:
 
-### postgreSQL:
-1. psql -U postgres
-2. create role root with createdb login password 'password1';
+### Environment setup
+1. Install Ruby and Ruby on Rails
+    ```bash
+    sudo apt-get install ruby ruby-dev zlib1g-dev
+    sudo gem install rails
+    ```
+2. Install JS interpreter. Here nodeJS is recommended.
+    ```bash
+    curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+    ```
+    Please check https://nodejs.org/en/download/package-manager/ for the installation guide for other OS
+http://installrails.com/ (pretty straight forward tutorial to install this framework)
+
+### Database setup
+1. Enter the PostgresSQL with admin user by following command:
+```bash
+psql -U postgres
+```
+2. Create the role for this application:
+```sql
+create role iTravel with createdb login password 'password1';
+```
 ###### reference: https://www.digitalocean.com/community/tutorials/how-to-setup-ruby-on-rails-with-postgres
 
-### How to run the app:
-1. Make sure that Postgres is running!
-2. Make sure you are inside iTravel directory
-3. Once you are inside iTravel directory
-4. type ``` rails db:reset ```
-5. type ``` rails s ```
-6. Go to ```http://localhost:3000/``` in your browser
+### App setting
+1. Set up the packages required and database reset
+    ```bash
+        bundle install
+        rails db:reset
+    ```
+
+### Running the application
+1. Once you have finish all the setting up, you can launch the application by following command
+    ```bash
+        rails s
+    ```
+2. The application will run in http://localhost:3000/
 
 #### References:
 - [1] https://www.railstutorial.org/book (Learn by doing)
