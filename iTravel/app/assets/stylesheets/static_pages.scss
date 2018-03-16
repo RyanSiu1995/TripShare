@@ -1,3 +1,24 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ // Media Query Ranges
+ $small-screen-up: 601px !default;
+ $medium-screen-up: 993px !default;
+ $large-screen-up: 1201px !default;
+ $small-screen: 600px !default;
+ $medium-screen: 992px !default;
+ $large-screen: 1200px !default;
+
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+$small-and-down: "only screen and (max-width : #{$small-screen})" !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+
+@media #{$medium-and-down} {
+    .row .col.offset-s3.searchBar {
+        margin: 0;
+        width: 100%;
+    }
+} 
