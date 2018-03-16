@@ -80,8 +80,8 @@ key for successful large-scale software development. Besides, you can take the p
 to develop a tech-savvy, customer-driven, and eye-catching software product, as if you are in a
 start-up IT company.
 
-The project consists of four phases: (1) software initial design, ( 2 ) initial coding, ( 3 ) completed
-coding and demo, and ( 4 ) final report and documented code. After the submission of completed
+The project consists of four phases: (1) software initial design, (2) initial coding, (3) completed
+coding and demo, and (4) final report and documented code. After the submission of completed
 code, the project team will need to make a demonstration and answer questions regarding the
 project during the demo on the Demo Day.
 
@@ -192,7 +192,7 @@ significantly if the percentage of reused existing code exceeds a certain thresh
 
 There are four project phases described as follows:
 
-( 1 ) Initial Design Phase ( 5 weeks)
+(1) Initial Design Phase (5 weeks)
 In this phase, each project group will prepare and submit an initial design document to provide
 high-level descriptions on functionalities, features, and architectural design of your application.
 Project background, architecture diagrams and brief descriptions of the key system components
@@ -221,7 +221,7 @@ your submission. You are required to use git version control system for all your
 described later in Section 6.2.
 ```
 ```
-( 3 ) Final Code and Demonstration ( 3 weeks)
+(3) Final Code and Demonstration (3 weeks)
 In this phase, you are completing your project and are required to submit your final code of the
 project. Your final code should be self-contained and working. You will need to make a
 demonstration after the submission of the final code. Project Demo Day is scheduled on April 4 ,
@@ -230,7 +230,7 @@ and the demo schedule will be signed up accordingly (please note the news on the
 Your final code for demo should be submitted by midnight of April 3, 2 018 (Tuesday).
 ```
 ```
-( 4 ) Final Report and Commented Code ( 4 weeks)
+(4) Final Report and Commented Code (4 weeks)
 After the demonstration, you are required to prepare and submit a final report and commented
 code of your project by midnight of May 4, 2018 (Friday). In additional to reporting your
 comprehensive project, which includes your finalized detailed design, the final report should also
@@ -268,7 +268,7 @@ Demo Day: 4 Apr (full day)
 Commented Code
 
 ```
-20 % 4 weeks 4 May (23:59:59 pm)
+20 % 4 weeks Code submission: 4 May (23:59:59 pm)
 ```
 Total 100% 15 weeks
 
