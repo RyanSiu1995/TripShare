@@ -16,8 +16,7 @@ This application support the docker. Please follow the instructions to build the
     ```
 4. Open another terminal and navigate back to application folder. Send the DB reset signal to the containers.
     ```bash
-    cd ./iTravel
-    sudo docker-compose run web rails db:reset
+    sudo docker-compose run web rails db:reset
     ```
 5. You can now access the application through http://localhost:3000
 
