@@ -33,7 +33,7 @@
   <% end %>
     </h6>
     <h6 class='text-right grey-text lighten-3'>
-      <%= link_to 'Edit', edit_trip_path(@trip) %> |
+      <% if current_user.id == @trip.user.id%> <%= link_to 'Edit', edit_trip_path(@trip) %> | <% end %>
       <%= link_to 'Back', user_path(@trip.user) %>
     </h6>
   </div>
