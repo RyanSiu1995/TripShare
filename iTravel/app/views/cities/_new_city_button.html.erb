@@ -1,9 +1,11 @@
 <div class="container">
-  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-
-    <%= button_to 'Add', {:controller => "cities", :action => "new"}, :method=>:get, params: { id: @trip.id }, class:"btn btn-floating btn-large red", 'data-position':"left", 'data-tooltip': "new city".humanize%>
-
-
+  <div class="fixed-action-btn floating-button">
+    <%= button_to 'Add', 
+      {:controller => "cities", :action => "new"},
+      :method=>:get, params: { id: @trip.id },
+      class:"btn btn-floating btn-large red",
+      'data-position':"left",
+      'data-tooltip': "new city".humanize%>
   </br>
   </div>
 </div>
