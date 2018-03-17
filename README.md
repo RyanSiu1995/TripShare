@@ -1,73 +1,5 @@
 # CSCI 3100 Software Engineering
 
-## Docker Setup:
-This application support the docker. Please follow the instructions to build the images and run the application.
-1. Navigate to the application folder
-    ```bash
-    cd ./iTravel
-    ```
-2. Build the image of the application
-    ```bash
-    sudo docker-compose build 
-    ```
-3. Launch the image
-    ```bash
-    sudo docker-compose up
-    ```
-4. Open another terminal and navigate back to application folder. Send the DB reset signal to the containers.
-    ```bash
-    sudo docker-compose run web rails db:reset
-    ```
-5. You can now access the application through http://localhost:3000
-
-## Local Setup:
-
-### Environment setup
-1. Install Ruby and Ruby on Rails
-    ```bash
-    sudo apt-get install ruby ruby-dev zlib1g-dev
-    sudo gem install rails
-    ```
-2. Install JS interpreter. Here nodeJS is recommended.
-    ```bash
-    curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-    sudo apt-get install -y nodejs
-    ```
-    Please check https://nodejs.org/en/download/package-manager/ for the installation guide for other OS
-http://installrails.com/ (pretty straight forward tutorial to install this framework)
-
-### Database setup
-1. Enter the PostgresSQL with admin user by following command:
-```bash
-psql -U postgres
-```
-2. Create the role for this application:
-```sql
-create role iTravel with createdb login password 'password1';
-```
-###### reference: https://www.digitalocean.com/community/tutorials/how-to-setup-ruby-on-rails-with-postgres
-
-### App setting
-1. Set up the packages required and database reset
-    ```bash
-        bundle install
-        rails db:reset
-    ```
-
-### Running the application
-1. Once you have finish all the setting up, you can launch the application by following command
-    ```bash
-        rails s
-    ```
-2. The application will run in http://localhost:3000/
-
-#### References:
-- [1] https://www.railstutorial.org/book (Learn by doing)
-- [2] [MVC in action](https://www.railstutorial.org/book/toy_app#sec-mvc_in_action)
-- [3] [Search in rails] (https://stackoverflow.com/questions/12010780/search-in-rails)
-
-- [rails db:options](https://stackoverflow.com/questions/10301794/difference-between-rake-dbmigrate-dbreset-and-dbschemaload)
-
 # Project Requirement Specification
 
 ## 1. Objective:
@@ -193,6 +125,7 @@ significantly if the percentage of reused existing code exceeds a certain thresh
 There are four project phases described as follows:
 
 (1) Initial Design Phase (5 weeks)
+
 In this phase, each project group will prepare and submit an initial design document to provide
 high-level descriptions on functionalities, features, and architectural design of your application.
 Project background, architecture diagrams and brief descriptions of the key system components
@@ -252,15 +185,21 @@ Team Formulation
 ##### -- --
 
 19 Jan (23:59:59 pm)
-1. Project Design Document 20 % 5 weeks 23 Feb (23:59:59 pm)
-
-2. Initial Code 10 % 3 weeks 18 Mar (23:59:59 pm)
-
-3. Completed Code and
-Demo
+1. Project Design Document 
+```
+20 % 5 weeks 
+Submmision: 23 Feb (23:59:59 pm)
+```
+2. Initial Code 
+```
+10 % 3 weeks 
+Code submission: 18 Mar (23:59:59 pm)
+```
+3. Completed Code and Demo
 
 ```
-50 % 3 weeks Code submission: 3 Apr (23:59:59pm)
+50 % 3 weeks 
+Code submission: 3 Apr (23:59:59pm)
 Demo Day: 4 Apr (full day)
 ```
 
@@ -268,7 +207,8 @@ Demo Day: 4 Apr (full day)
 Commented Code
 
 ```
-20 % 4 weeks Code submission: 4 May (23:59:59 pm)
+20 % 4 weeks 
+Code submission: 4 May (23:59:59 pm)
 ```
 Total 100% 15 weeks
 
