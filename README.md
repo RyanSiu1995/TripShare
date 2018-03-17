@@ -124,8 +124,7 @@ significantly if the percentage of reused existing code exceeds a certain thresh
 
 There are four project phases described as follows:
 
-(1) Initial Design Phase (5 weeks)
-
+(1) Initial Design Phase (5 weeks)  
 In this phase, each project group will prepare and submit an initial design document to provide
 high-level descriptions on functionalities, features, and architectural design of your application.
 Project background, architecture diagrams and brief descriptions of the key system components
@@ -186,11 +185,13 @@ Team Formulation
 
 19 Jan (23:59:59 pm)
 1. Project Design Document 
+
 ```
 20 % 5 weeks 
 Submmision: 23 Feb (23:59:59 pm)
 ```
 2. Initial Code 
+
 ```
 10 % 3 weeks 
 Code submission: 18 Mar (23:59:59 pm)
@@ -202,9 +203,7 @@ Code submission: 18 Mar (23:59:59 pm)
 Code submission: 3 Apr (23:59:59pm)
 Demo Day: 4 Apr (full day)
 ```
-
-4. Final Report and
-Commented Code
+4. Final Report and Commented Code
 
 ```
 20 % 4 weeks 
@@ -276,14 +275,14 @@ assignment of project members, code statistics (e.g., lines of code, number of f
 project highlights, test case design and results, and lessons learned should be reported.
 
 Each document should contain three parts: cover page, table of contents, and detailed contents.
-The Cover page must contain the following information
-▪ Name of Document
-▪ Project Title (You can create your own project name under the assigned topic)
-▪ Document Version Number
-▪ Printing Date
-▪ Group ID
-▪ member names and SID
-▪ Department & University
+The Cover page must contain the following information  
+▪ Name of Document  
+▪ Project Title (You can create your own project name under the assigned topic)  
+▪ Document Version Number  
+▪ Printing Date  
+▪ Group ID  
+▪ member names and SID  
+▪ Department & University  
 
 The followings are the detailed outlines for the two reports:
 
@@ -297,21 +296,20 @@ provided. You are also encouraged to apply DFD to specify your product and UML t
 initial design, so that the architectural and major components of your product can be clearly
 described. The recommended outline is listed as follows.
 
-1 INTRODUCTION
-1.1 Project Overview
-1.2 Objective
-1.3 Expected Customers and Market
-
-1. 4 System Features
-2 BACKGROUND
+1 INTRODUCTION  
+1.1 Project Overview  
+1.2 Objective  
+1.3 Expected Customers and Market  
+1.4 System Features  
+2 BACKGROUND  
 
 
 Emphasize why your design the product, and its most attractive functionality/features.
-3 SPECIFICATION (e.g., DFD)
-4 SYSTEM ARCHITECTURE
-3.1 Architecture Diagram
-3.2 System Components
-3.3 Description of Major System Components by UML
+3 SPECIFICATION (e.g., DFD)  
+4 SYSTEM ARCHITECTURE  
+3.1 Architecture Diagram  
+3.2 System Components  
+3.3 Description of Major System Components by UML  
 
 ### 1.2 Final report outline (30 or more pages)
 
@@ -382,33 +380,31 @@ positive and negative experience you have with the project.
 
 #### Recommended final report structure
 
-Cover Page
-Table of Contents
-1 INTRODUCTION
-1.1 Project Overview
-1.2 Objective
-1.3 Highlights
-1.4 Project Statistics
-2 SYSTEM ARCHITECTURAL DESIGN by DFD
-2.1 System Architecture
-2.2 DFDs
-3 DETAILED DESCRIPTION OF COMPONENTS by UML
-3.n Component-n
-3.n.1 Structural Diagram
-3.n.2 UMLs
-3.n. 3 Functionality
-3.n. 4 Procedures and Functions
-4 USER INTERFACE DESIGN
-4.1 Description of the User Interface
-
-
-4.2 Screen Images
-4.3 Objects and Actions
-5 TEST
-5.1 Test Overview and Test Plan
-5.n Case-n
-5.n.1 Purpose
-5.n.2 Inputs
-5.n.3 Expected Outputs & Pass/Fail Criteria
-6 LESSONS LEARNED
-7 CONCLUSION
+Cover Page  
+Table of Contents  
+1 INTRODUCTION  
+  1.1 Project Overview  
+  1.2 Objective  
+  1.3 Highlights  
+  1.4 Project Statistics  
+2 SYSTEM ARCHITECTURAL DESIGN by DFD  
+  2.1 System Architecture  
+  2.2 DFDs  
+3 DETAILED DESCRIPTION OF COMPONENTS by UML  
+  3.n Component-n  
+  3.n.1 Structural Diagram  
+  3.n.2 UMLs  
+  3.n. 3 Functionality  
+  3.n. 4 Procedures and Functions  
+4 USER INTERFACE DESIGN  
+  4.1 Description of the User Interface  
+  4.2 Screen Images  
+  4.3 Objects and Actions  
+5 TEST  
+  5.1 Test Overview and Test Plan  
+  5.n Case-n  
+    5.n.1 Purpose  
+    5.n.2 Inputs  
+    5.n.3 Expected Outputs & Pass/Fail Criteria  
+6 LESSONS LEARNED  
+7 CONCLUSION  
