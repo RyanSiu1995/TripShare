@@ -296,18 +296,18 @@ provided. You are also encouraged to apply DFD to specify your product and UML t
 initial design, so that the architectural and major components of your product can be clearly
 described. The recommended outline is listed as follows.
 
-1 INTRODUCTION  
-  * 1.1 Project Overview  
-  * 1.2 Objective  
-  * 1.3 Expected Customers and Market  
-  * 1.4 System Features  
-2 BACKGROUND  
+* 1 INTRODUCTION  
+  1.1 Project Overview  
+  1.2 Objective  
+  1.3 Expected Customers and Market  
+  1.4 System Features  
+* 2 BACKGROUND  
 Emphasize why your design the product, and its most attractive functionality/features.  
-3 SPECIFICATION (e.g., DFD)  
-4 SYSTEM ARCHITECTURE  
-  * 3.1 Architecture Diagram  
-  * 3.2 System Components  
-  * 3.3 Description of Major System Components by UML  
+* 3 SPECIFICATION (e.g., DFD)  
+* 4 SYSTEM ARCHITECTURE  
+  3.1 Architecture Diagram  
+  3.2 System Components  
+  3.3 Description of Major System Components by UML  
 
 ### 1.2 Final report outline (30 or more pages)
 
@@ -378,31 +378,31 @@ positive and negative experience you have with the project.
 
 #### Recommended final report structure
 
-Cover Page  
-Table of Contents  
-1 INTRODUCTION  
+* Cover Page  
+* Table of Contents  
+* 1 INTRODUCTION  
   * 1.1 Project Overview  
   * 1.2 Objective  
   * 1.3 Highlights  
   * 1.4 Project Statistics  
-2 SYSTEM ARCHITECTURAL DESIGN by DFD  
+* 2 SYSTEM ARCHITECTURAL DESIGN by DFD  
   * 2.1 System Architecture  
   * 2.2 DFDs  
-3 DETAILED DESCRIPTION OF COMPONENTS by UML  
+* 3 DETAILED DESCRIPTION OF COMPONENTS by UML  
   * 3.n Component-n  
   * 3.n.1 Structural Diagram  
   * 3.n.2 UMLs  
-  * 3.n. 3 Functionality  
-  * 3.n. 4 Procedures and Functions  
-4 USER INTERFACE DESIGN  
+  * 3.n.3 Functionality  
+  * 3.n.4 Procedures and Functions  
+* 4 USER INTERFACE DESIGN  
   * 4.1 Description of the User Interface  
   * 4.2 Screen Images  
   * 4.3 Objects and Actions  
-5 TEST  
+* 5 TEST  
   * 5.1 Test Overview and Test Plan  
   * 5.n Case-n  
-    * 5.n.1 Purpose  
-    * 5.n.2 Inputs  
-    * 5.n.3 Expected Outputs & Pass/Fail Criteria  
-6 LESSONS LEARNED  
-7 CONCLUSION  
+    5.n.1 Purpose  
+    5.n.2 Inputs  
+    5.n.3 Expected Outputs & Pass/Fail Criteria  
+* 6 LESSONS LEARNED  
+* 7 CONCLUSION  
