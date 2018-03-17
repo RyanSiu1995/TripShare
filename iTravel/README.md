@@ -2,33 +2,36 @@
 
 ## Docker Setup:
 This application support the docker. Please follow the instructions to build the images and run the application.
-1. Navigate to the application folder
+
+1. Turn the docker on. You may check up https://www.docker.com to setup the docker environment.
+
+2. Navigate to the application folder:
     ```bash
     cd ./iTravel
     ```
-2. Build the image of the application
+3. Build the image of the application:
     ```bash
     sudo docker-compose build 
     ```
-3. Launch the image
+4. Launch the image:
     ```bash
     sudo docker-compose up
     ```
-4. Open another terminal and navigate back to application folder. Send the DB reset signal to the containers.
+5. Open another terminal and navigate back to application folder. Send the DB reset signal to the containers:
     ```bash
     sudo docker-compose run web rails db:reset
     ```
-5. You can now access the application through http://localhost:3000
+6. You can now access the application through http://localhost:3000.
 
 ## Local Setup:
 
 ### Environment setup
-1. Install Ruby and Ruby on Rails
+1. Install Ruby and Ruby on Rails:
     ```bash
     sudo apt-get install ruby ruby-dev zlib1g-dev
     sudo gem install rails
     ```
-2. Install JS interpreter. Here nodeJS is recommended.
+2. Install JS interpreter. Here nodeJS is recommended:
     ```bash
     curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
     sudo apt-get install -y nodejs
@@ -48,14 +51,14 @@ create role iTravel with createdb login password 'password1';
 ###### reference: https://www.digitalocean.com/community/tutorials/how-to-setup-ruby-on-rails-with-postgres
 
 ### App setting
-1. Set up the packages required and database reset
+1. Set up the packages required and database reset:
     ```bash
         bundle install
         rails db:reset
     ```
 
 ### Running the application
-1. Once you have finish all the setting up, you can launch the application by following command
+1. Once you have finish all the setting up, you can launch the application by following command:
     ```bash
         rails s
     ```
