@@ -116,6 +116,7 @@ The whole process with Rails work like this: a browser sends a request, which is
 
 ## Sequence Diagrams
 * To register new user and log in.
+
 ![UML Diagram](asset/image/uml_sq_diagram_01.png)
 * To like or dislike a trip.
 
