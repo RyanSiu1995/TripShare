@@ -24,14 +24,23 @@
         <%= f.text_field :description, placeholder: "Description" %>
       </div>
 
+      <% if action_name == "new" %>
+        <div class="field" type="hidden" value"<%= @trip.id%>">
+          <%= f.hidden_field :trip_id %>
+        </div>
+      <% end %>
+
+
       <div class="text-center">
-        <%= f.submit "Submit", class: "btn btn-primary" %>
+        <%= f.submit "Submit",  class:"btn btn-primary"%>
       </div>
 
       <div class="text-center">
-        <%= link_to 'Back fix', current_user %>
+        <%= link_to 'Back', @city.trip %>
       </div>
+
       <% end %>
+
     </div>
   </div>
 </div>

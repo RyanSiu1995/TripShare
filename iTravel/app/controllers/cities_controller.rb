@@ -17,18 +17,21 @@ class CitiesController < ApplicationController
   end
 
   def create
-    # @city = current_user.trips.cities.build(trip_params)
-    # respond_to do |format|
-    #
-    #   if @trip.save
-    #     # flash[:success] = "Trip created!"
-    #     format.html { redirect_to @trip, notice: 'Trip was successfully created.' }
-    #     format.json { render :show, status: :created, location: @trip }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @trip.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    # debugger
+    trip_id = params[:city][:trip_id]
+    @trip = Trip.find(trip_id)
+    @city = @trip.cities.build(city_params)
+    respond_to do |format|
+
+      if @city.save
+        flash[:success] = "City created!"
+        format.html { redirect_to @trip, notice: 'City was successfully created.' }
+        format.json { render :show, status: :created, location: @city }
+      else
+        format.html { render :new }
+        format.json { render json: @city.errors, status: :unprocessable_entity }
+      end
+    end
 
   end
 
