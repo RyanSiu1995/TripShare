@@ -15,15 +15,14 @@
 2. Make sure you are inside iTravel directory
 3. Once you are inside iTravel directory
 4. type ``` rails db:reset ```
-5. type ``` rails s ```
+5. type ``` rails s ``` in another terminal tab (make sure to follow step 2)
 6. Go to ```http://localhost:3000/``` in your browser
 
 #### References:
 - [1] https://www.railstutorial.org/book (Learn by doing)
 - [2] [MVC in action](https://www.railstutorial.org/book/toy_app#sec-mvc_in_action)
 - [3] [Search in rails] (https://stackoverflow.com/questions/12010780/search-in-rails)
-
-- [rails db:options](https://stackoverflow.com/questions/10301794/difference-between-rake-dbmigrate-dbreset-and-dbschemaload)
+- [4][railsdb:options](https://stackoverflow.com/questions/10301794/difference-between-rake-dbmigrate-dbreset-and-dbschemaload)
 
 # Project Requirement Specification
 
