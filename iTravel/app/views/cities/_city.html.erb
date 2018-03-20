@@ -7,7 +7,17 @@
     </div>
     <div class="collapsible-body">
       <%= city.description %>
-      <%= link_to 'More fix', trips_path, class: "right" %>
-      <%= link_to 'Edit', edit_city_path(city) %>
+      <div class="right">
+          <%= link_to 'More', city, class: "" %>
+
+          <!-- TODO Checks that only the owner of the resource can delete the post-->
+          <% if user_signed_in?  %>
+            <% if (current_user.id == city.trip.user_id) %>
+            <%= link_to '| Edit', edit_city_path(city), class: "" %>
+            <%= link_to "| Delete", city, method: :delete, data: { confirm: "You sure?" } %>
+            <% end %>
+          <% end %>
+
+      </div>
     </div>
   </li>
