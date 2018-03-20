@@ -1,6 +1,11 @@
 <div class="container">
-  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    <%= link_to new_trip_path, class:"btn btn-floating btn-large red tooltipped waves-effect waves-block waves-light", 'data-delay':"50", 'data-position':"left", 'data-tooltip': "new trip".humanize, icon: 'close' do%>
+  <div class="fixed-action-btn  floating-button">
+    <%= link_to new_trip_path,
+      class:"btn btn-floating btn-large red tooltipped waves-effect waves-block waves-light",
+      'data-delay':"50",
+      'data-position':"left",
+      'data-tooltip': "new trip".humanize,
+      icon: 'close' do%>
     <i class="material-icons right">add</i>
     <% end %>
   </br>
