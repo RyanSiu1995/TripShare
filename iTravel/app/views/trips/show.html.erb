@@ -18,6 +18,7 @@
 
     <% if current_user.id == @trip.user.id%>
       <%= render "cities/new_city_button" %>
+      <%= render "pictures/new_picture_button" %>
     <% end %>
 
   <div class="">
@@ -42,16 +43,28 @@
 
 
   <div class="row">
+
+    <% if @trip.pictures.any? %>
+
+      <h5 class='text-left grey-text lighten-3'>
+        <%= @trip.pictures.count %>
+        <%= "Picture".pluralize(@trip.pictures.count) %>
+      </h5>
+      <div class="carousel">
+        <%= render @pictures %>
+      </div>
+    <% end %>
+
     <% if @trip.cities.any? %>
 
-    <h5 class='text-left grey-text lighten-3'>
-      <%= @trip.cities.count %>
-      <%= "City".pluralize(@trip.cities.count) %>
-    </h5>
+      <h5 class='text-left grey-text lighten-3'>
+        <%= @trip.cities.count %>
+        <%= "City".pluralize(@trip.cities.count) %>
+      </h5>
 
-    <ul class="collapsible" data-collapsible="accordion">
-      <%= render @cities %>
-    </ul>
+      <ul class="collapsible" data-collapsible="accordion">
+        <%= render @cities %>
+      </ul>
     <% end %>
   </div>
 </div>

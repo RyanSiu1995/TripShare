@@ -1,0 +1,26 @@
+<div class="col s10 offset-s1 m6 offset-m3">
+  <div class="card">
+    <div class="card-content">
+      <%= simple_form_for @picture, url: pictures_path do |f| %>
+
+        <div class="text-center">
+          <%= f.input :image, as: :file %>
+        </div>
+
+
+        <% if action_name == "new" %>
+          <div class="field" type="hidden" value"<%= @trip.id%>">
+            <%= f.hidden_field :trip_id %>
+          </div>
+        <% end %>
+
+        <div class="text-center">
+          <%= f.submit "Submit",  class:"btn btn-primary"%>
+        </div>
+
+
+
+      <% end %>
+    </div>
+  </div>
+</div>

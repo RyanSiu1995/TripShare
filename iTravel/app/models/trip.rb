@@ -1,10 +1,13 @@
 class Trip < ApplicationRecord
   belongs_to :user
   has_many :cities, dependent: :destroy
+  has_many :pictures, dependent: :destroy
   validates :user_id, presence: true
   validates :title, presence: true
   validates :country, presence: true
   default_scope -> { order(created_at: :desc) }
+
+
   acts_as_votable
 
   def self.search(search)
@@ -12,6 +15,8 @@ class Trip < ApplicationRecord
     where("lower(country) LIKE ?", "%#{search}%")
 
   end
+
+  has_many :pictures, :dependent => :destroy
 
 
 

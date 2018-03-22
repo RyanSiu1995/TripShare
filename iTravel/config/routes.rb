@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :trips
   resources :cities
+  resources :pictures
 
   root 'static_pages#home'
 
