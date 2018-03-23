@@ -5,6 +5,7 @@ class Picture < ApplicationRecord
   validates :image, presence: true
   has_attached_file :image, styles: { medium: "300x300#", thumb: "100x100>" }, default_url: "https://lorempixel.com/300/300/nature/1"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_size :image, :in => 0.megabytes..4.megabytes
 
 
 end
