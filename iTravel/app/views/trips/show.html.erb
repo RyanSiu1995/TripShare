@@ -16,35 +16,66 @@
 
   <% if user_signed_in? %>
 
-    <% if current_user.id == @trip.user.id%>
-      <%= render "cities/new_city_button" %>
-      <%= render "pictures/new_picture_button" %>
+  <% if current_user.id == @trip.user.id%>
+
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">add</i>
+    </a>
+    <ul>
+      <li><a href="<%= new_picture_path %>" class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+
+      <li><a href="<%= new_city_path %>" class="btn-floating yellow darken-1">
+        <i class="material-icons">format_quote</i>
+      </a>
+    </li>
+    <li>
+      <%= button_to raw("picture"),
+      {:controller => "pictures", :action => "new"},
+      :method=>:get, params: { id: @trip.id },
+      class:"btn btn-floating btn-large blue",
+        'data-position':"left",
+        'data-tooltip': "new image".humanize%>
+
+      </li>
+
+      <li>
+        <%= button_to raw("city"),
+        {:controller => "cities", :action => "new"},
+        :method=>:get, params: { id: @trip.id },
+        class:"btn btn-floating btn-large blue",
+          'data-position': "left",
+          'data-tooltip': "new image".humanize%>
+        </li>
+      </ul>
+    </div>
+
     <% end %>
 
-  <div class="">
-    <h6 class='text-center'>
+    <div class="">
+      <h6 class='text-center'>
 
-      <% if (current_user.liked? @trip) %>
+        <% if (current_user.liked? @trip) %>
         <%= button_to 'Unlike', {:controller => "trips", :action => "like"}, :method=>:post, params: { id: @trip.id }, class: "btn btn-primary" %>
         <i class="material-icons center red-heart">favorite</i>
-      <% else %>
+        <% else %>
         <%= button_to 'Like', {:controller => "trips", :action => "like"}, :method=>:post, params: { id: @trip.id }, class: "btn btn-primary"  %>
         <i class="material-icons center red-heart">favorite_border</i>
-      <% end %>
-  <% end %>
-    </h6>
-    <h6 class='text-right grey-text lighten-3'>
-      <% if current_user.id == @trip.user.id%> <%= link_to 'Edit', edit_trip_path(@trip) %> | <% end %>
-      <%= link_to 'Back', user_path(@trip.user) %>
-    </h6>
-  </div>
+        <% end %>
+        <% end %>
+      </h6>
+      <h6 class='text-right grey-text lighten-3'>
+        <% if current_user.id == @trip.user.id%> <%= link_to 'Edit', edit_trip_path(@trip) %> | <% end %>
+        <%= link_to 'Back', user_path(@trip.user) %>
+      </h6>
+    </div>
 
-  <hr>
+    <hr>
 
 
-  <div class="row">
+    <div class="row">
 
-    <% if @trip.pictures.any? %>
+      <% if @trip.pictures.any? %>
 
       <h5 class='text-left grey-text lighten-3'>
         <%= @trip.pictures.count %>
@@ -53,9 +84,9 @@
       <div class="carousel">
         <%= render @pictures %>
       </div>
-    <% end %>
+      <% end %>
 
-    <% if @trip.cities.any? %>
+      <% if @trip.cities.any? %>
 
       <h5 class='text-left grey-text lighten-3'>
         <%= @trip.cities.count %>
@@ -65,6 +96,6 @@
       <ul class="collapsible" data-collapsible="accordion">
         <%= render @cities %>
       </ul>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>

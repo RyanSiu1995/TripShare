@@ -39,6 +39,12 @@ $(document).ready(function(){
 
   $('.carousel').carousel();
 
+  $('.fixed-action-btn').floatingActionButton();
+
+  $('.modal').modal();
+
+  $('#modal1').modal();
+
 
 });
 
