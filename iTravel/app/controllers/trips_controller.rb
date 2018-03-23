@@ -23,6 +23,9 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @cities = @trip.cities.all
     @pictures = @trip.pictures.all
+    @comments = @trip.comments.all
+    @comment = @trip.comments.new
+
   end
 
   def new

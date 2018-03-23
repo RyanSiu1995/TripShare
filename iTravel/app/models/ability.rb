@@ -12,6 +12,7 @@ class Ability
       can :manage, Trip
       can :manage, User
       can :manage, Picture
+      can :manage, Comment
       cannot :destroy, User
     end
 

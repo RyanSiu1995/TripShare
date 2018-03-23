@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180322100406) do
+ActiveRecord::Schema.define(version: 20180323085149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 20180322100406) do
     t.datetime "updated_at", null: false
     t.index ["trip_id", "created_at"], name: "index_cities_on_trip_id_and_created_at"
     t.index ["trip_id"], name: "index_cities_on_trip_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.bigint "trip_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["trip_id", "created_at"], name: "index_comments_on_trip_id_and_created_at"
+    t.index ["trip_id"], name: "index_comments_on_trip_id"
   end
 
   create_table "pictures", force: :cascade do |t|
@@ -93,6 +102,7 @@ ActiveRecord::Schema.define(version: 20180322100406) do
   end
 
   add_foreign_key "cities", "trips"
+  add_foreign_key "comments", "trips"
   add_foreign_key "pictures", "trips"
   add_foreign_key "trips", "users"
 end

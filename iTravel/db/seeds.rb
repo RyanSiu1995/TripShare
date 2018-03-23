@@ -51,12 +51,22 @@ users = User.order(:created_at).take(6)
 
     description = Faker::Lorem.sentence #=> "Dolore illum animi et neque accusantium."
     city = Faker::Address.city #=> "French Guiana"
+    content = Faker::Lorem.sentence #=> "Dolore illum animi et neque accusantium."
 
     random_cities = rand(2..15)
+    random_comments = rand(2..15)
+
 
     random_cities.times do
       trip.cities.create!(name: city, description: description)
     end
+
+    random_cities = rand(2..15)
+
+    random_comments.times do
+      trip.comments.create!(content: content)
+    end
+
     }
 
 
