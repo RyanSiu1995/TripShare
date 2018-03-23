@@ -11,6 +11,7 @@ class Ability
       can :manage, City
       can :manage, Trip
       can :manage, User
+      can :manage, Picture
       cannot :destroy, User
     end
 

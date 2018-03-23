@@ -23,12 +23,7 @@
       <i class="large material-icons">add</i>
     </a>
     <ul>
-      <li><a href="<%= new_picture_path %>" class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-
-      <li><a href="<%= new_city_path %>" class="btn-floating yellow darken-1">
-        <i class="material-icons">format_quote</i>
-      </a>
-    </li>
+  
     <li>
       <%= button_to raw("picture"),
       {:controller => "pictures", :action => "new"},
