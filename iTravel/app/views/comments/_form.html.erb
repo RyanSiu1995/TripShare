@@ -1,14 +1,30 @@
+<% if notice %>
+  <script type="text/javascript">
+    Materialize.toast('<%= notice %>', 4000)
+  </script>
+<% end %>
+
+
 <%= form_for(@comment) do |f| %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new comment..." %>
+
+<div class="row">
+  <div class="input-field col s12 offset-s0">
+    <i class="material-icons prefix">mode_edit</i>
+    <!-- <textarea id="icon_prefix2" class="materialize-textarea"></textarea> -->
+    <label for="icon_prefix2">Compose new comment...</label>
+
+    <%= f.text_field :content  %>
   </div>
 
-    <div class="field" type="hidden" value"<%= @trip.id%>" style="">
-      <%= f.hidden_field :trip_id %>
-    </div>
+  <div class="field" type="hidden" value"<%= @trip.id%>" style="">
+    <%= f.hidden_field :trip_id %>
+  </div>
+  <br>
+  <div class="text-center">
+    <%= f.submit "Submit",  class:"btn btn-primary"%>
+  </div>
 
-    <div class="text-center">
-      <%= f.submit "Submit",  class:"btn btn-primary"%>
-    </div>
+
+</div>
 
 <% end %>
