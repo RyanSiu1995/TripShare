@@ -10,11 +10,12 @@ class CommentsController < ApplicationController
   end
 
   def create
-
     trip_id = params[:comment][:trip_id]
     @trip = Trip.find(trip_id)
     @comment = @trip.comments.build(comment_params)
     respond_to do |format|
+
+      @comment.user_id = current_user.id
 
       if @comment.save
         flash[:success] = "Comment created!"
@@ -22,6 +23,7 @@ class CommentsController < ApplicationController
         format.json { render :show, status: :created, location: @city }
       else
         format.html { redirect_to @trip, notice: "Comment cannot be blank" }
+        # format.html { redirect_to @trip, notice: @comment.errors }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end

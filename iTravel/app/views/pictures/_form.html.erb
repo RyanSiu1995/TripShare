@@ -3,23 +3,36 @@
     <div class="card-content">
       <%= simple_form_for @picture, url: pictures_path do |f| %>
 
-        <div class="field">
-          <%= f.text_field :description, placeholder: "Description" %>
-        </div>
+      <div class="field">
+        <%= f.text_field :description, placeholder: "Description" %>
+      </div>
 
-        <div class="text-center">
-          <%= f.input :image, as: :file %>
-        </div>
+      <div class="text-center">
+        <%= f.input :image, as: :file %>
+      </div>
 
-        <% if action_name == "new" %>
-          <div class="field" type="hidden" value"<%= @trip.id%>" style="margin-top: 100px;">
-            <%= f.hidden_field :trip_id %>
-          </div>
-        <% end %>
-
-        <div class="text-center">
-          <%= f.submit "Submit",  class:"btn btn-primary"%>
+      <!-- <div class="file-field input-field">
+        <div class="btn">
+          <span>File</span>
+          <input type="file" multiple>
         </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Upload one or more files">
+          <input class="file-path validate" type="text">
+
+        </div>
+      </div> -->
+
+
+      <% if action_name == "new" %>
+      <div class="field" type="hidden" value"<%= @trip.id%>" style="margin-top: 100px;">
+        <%= f.hidden_field :trip_id %>
+      </div>
+      <% end %>
+
+      <div class="text-center">
+        <%= f.submit "Submit",  class:"btn btn-primary"%>
+      </div>
 
 
 

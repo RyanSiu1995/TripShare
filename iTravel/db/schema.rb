@@ -28,10 +28,13 @@ ActiveRecord::Schema.define(version: 20180323085149) do
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.bigint "trip_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["trip_id", "created_at"], name: "index_comments_on_trip_id_and_created_at"
     t.index ["trip_id"], name: "index_comments_on_trip_id"
+    t.index ["user_id", "created_at"], name: "index_comments_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "pictures", force: :cascade do |t|
@@ -103,6 +106,7 @@ ActiveRecord::Schema.define(version: 20180323085149) do
 
   add_foreign_key "cities", "trips"
   add_foreign_key "comments", "trips"
+  add_foreign_key "comments", "users"
   add_foreign_key "pictures", "trips"
   add_foreign_key "trips", "users"
 end

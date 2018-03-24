@@ -7,6 +7,8 @@ class User < ApplicationRecord
   acts_as_voter
 
   has_many :trips, dependent: :destroy
+  has_many :comments, dependent: :destroy
+
 
 
 end
