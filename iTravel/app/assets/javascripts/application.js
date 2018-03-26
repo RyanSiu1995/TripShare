@@ -50,6 +50,9 @@ $(document).ready(function(){
   //or by click on trigger
   $('.trigger-modal').modal();
 
+  $('.materialboxed').materialbox();
+
+
 
 
 });
