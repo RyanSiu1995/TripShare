@@ -64,7 +64,7 @@ users = User.order(:created_at).take(6)
     random_cities = rand(2..15)
 
     random_comments.times do
-      trip.comments.create!(content: content)
+      # trip.comments.create!(content: content)
     end
 
     }
