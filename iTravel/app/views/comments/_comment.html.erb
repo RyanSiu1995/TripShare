@@ -2,6 +2,12 @@
   <span class="content"><%= comment.content %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(comment.created_at) %> ago by <%= link_to comment.user.name, comment.user %>
-
+    <% if user_signed_in? %>
+      <% if ((current_user.id == comment.user_id) || current_user.admin? ) %>
+        <div class="right">
+          <%= link_to "delete", comment, method: :delete, data: { confirm: "You sure?" } %>
+        </div>
+      <% end %>
+    <% end %>
   </span>
 </li>

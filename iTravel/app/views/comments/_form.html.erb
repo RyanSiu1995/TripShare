@@ -20,9 +20,11 @@
     <%= f.hidden_field :trip_id %>
   </div>
 
-  <div class="field" type="hidden" value"<%= current_user.id %>" style="">
-    <%= f.hidden_field :user_id %>
-  </div>
+  <% if user_signed_in? %>
+    <div class="field" type="hidden" value"<%= current_user.id %>" style="">
+      <%= f.hidden_field :user_id %>
+    </div>
+  <% end %>
 
   <br>
   <div class="text-center">
