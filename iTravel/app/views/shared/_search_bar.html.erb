@@ -4,7 +4,7 @@
       <div class="card-content">
         <div class="input-field">
           <%= form_tag(trips_path, :method => "get", id: "search") do %>
-            <%= search_field_tag :search, params[:search], placeholder: "Search Trips",  id: "search" %>
+            <%= search_field_tag :search, params[:search], placeholder: "Search Trips",  id: "search", class: "autocomplete" %>
             <label for="search"><i class="material-icons">search</i></label>
             <i class="material-icons">close</i>
             <%= submit_tag "Search" , :type => "hidden" %>
@@ -15,6 +15,14 @@
     </div>
   </div>
 
+<script>
+  $(document).ready(() => {
+    $('input#search').autocomplete({
+      data: window.countryList,
+      limit: 5
+    })
+  })
+</script>
 
   <!-- TODO is better -->
     <!-- <div class="row">
