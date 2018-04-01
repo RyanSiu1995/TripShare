@@ -14,7 +14,7 @@ class Trip < ApplicationRecord
 
   def self.search(search)
     # Title is for the above case, the OP incorrectly had 'name'
-    where("lower(country) LIKE ?", "%#{search}%")
+    where("lower(country) LIKE lower(?)", "%#{search}%")
 
   end
 
