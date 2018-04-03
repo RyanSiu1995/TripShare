@@ -1,2 +1,4 @@
-
-  <%= (image_tag picture.image.url, class: "materialboxed")%>
+<div class="item-container">
+  <%= (image_tag picture.image.url, class: "materialboxed") %>
+  <%= (content_tag :div ,picture.description, class: "description") %>
+</div>

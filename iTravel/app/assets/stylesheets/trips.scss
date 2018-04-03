@@ -27,7 +27,7 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
     justify-content: space-around;
     flex-wrap: wrap;
 
-    & .material-placeholder{
+    & .item-container {
         width: 45%;
 
         @media #{$small-and-down} {
@@ -39,6 +39,10 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
         & img {
             width: 100%;
             height: auto;
+        }
+
+        & .description {
+            text-align: center;
         }
     }
 }
