@@ -47,14 +47,14 @@
     <div class="row">
 
       <% if @trip.pictures.any? %>
-
+        
         <h5 class='text-left grey-text lighten-3'>
           <%= @trip.pictures.count %>
           <%= "Picture".pluralize(@trip.pictures.count) %>
         </h5>
-
-        <%= render @pictures %>
-
+        <div class="picture-container">
+          <%= render @pictures %>
+        </div>
       <% end %>
 
       <% if @trip.cities.any? %>

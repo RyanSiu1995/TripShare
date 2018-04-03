@@ -28,3 +28,14 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
         }
     }
 }
+
+.floating-sub-button {
+    top: 80px; 
+    right: 24px;
+
+    @media #{$navBar-fix-query} {
+        & {
+            top: 90px;
+        }
+    }
+}
