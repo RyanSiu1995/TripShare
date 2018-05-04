@@ -48,6 +48,13 @@ psql -U postgres
 ```sql
 create role iTravel with createdb login password 'password1';
 ```
+3. Change the config/database.yml
+```yml
+host: localhost
+username: iTravel
+password: password1
+```
+
 ###### reference: https://www.digitalocean.com/community/tutorials/how-to-setup-ruby-on-rails-with-postgres
 
 ### App setting
