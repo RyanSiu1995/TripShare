@@ -22,6 +22,7 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
     color: red;
 }
 
+// Align of the pictures in the trip
 .picture-container {
     display: flex;
     justify-content: space-around;

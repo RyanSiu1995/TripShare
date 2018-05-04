@@ -18,6 +18,7 @@ $small-and-down: "only screen and (max-width : #{$small-screen})" !default;
 $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
 $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
 
+// Rearrange the add buttons
 .floating-button {
     top: 64px; 
     right: 24px;
@@ -29,6 +30,7 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
     }
 }
 
+// Rearrange the add buttons
 .floating-sub-button {
     top: 80px; 
     right: 24px;

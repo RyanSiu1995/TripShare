@@ -63,6 +63,7 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
 }
 
 @media #{$navBar-fix-query} {
+  // Fix the nav bar for responsive design
   div.navbar-fixed {
     height: 112px;
     nav {
@@ -71,6 +72,7 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
   }
 }
 
+// Reponsive design fixation
 @media #{$medium-and-down} {
   h3.subtitle {
     font-size: 2rem;
@@ -109,7 +111,7 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
 }
 
 
-//Styles for demo
+// Styles for demo
 .text-center {
   text-align: center;
 }
