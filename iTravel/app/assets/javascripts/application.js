@@ -19,6 +19,7 @@
 //= require turbolinks
 //= require_tree .
 
+// Initialize the country list to the window
 $(document).ready(() => {
   this.countryList = {
     "Andorra": null,
@@ -292,6 +293,7 @@ $(document).ready(() => {
   }
 });
 
+// Add the event listener to the datepicker
 $('.datepicker').pickadate({
   selectMonths: true, // Creates a dropdown to control month
   selectYears: 15, // Creates a dropdown of 15 years to control year,
@@ -303,6 +305,7 @@ $('.datepicker').pickadate({
 
 $(document).ready(function(){
   try {
+    // Try to add different event listenrers to different components
     $('.slider').slider({
         indicators: false
     });
@@ -316,10 +319,10 @@ $(document).ready(function(){
 
     $('.modal').modal();
 
-    //now you can open modal from code
+    // now you can open modal from code
     $('#modal1').modal('open');
 
-    //or by click on trigger
+    // or by click on trigger
     $('.trigger-modal').modal();
 
     $('.materialboxed').materialbox();
