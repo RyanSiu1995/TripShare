@@ -7,6 +7,7 @@ class CitiesController < ApplicationController
   def index
   end
 
+  # the new action
   def new
     @trip = Trip.find(params[:id])
     @city = @trip.cities.new
@@ -41,6 +42,7 @@ class CitiesController < ApplicationController
 
 
   def update
+    # Check the updated flag
     if @city.update_attributes(city_params)
       flash[:success] = "City updated"
       redirect_to @city
@@ -51,6 +53,7 @@ class CitiesController < ApplicationController
   end
 
   def destroy
+    # Distroy the city
     @city.destroy
     flash[:success] = "City deleted"
     redirect_to request.referrer || root_url

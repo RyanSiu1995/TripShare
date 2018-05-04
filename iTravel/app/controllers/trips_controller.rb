@@ -18,8 +18,8 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
   end
 
-
   def show
+    # Bind the variables from the trip object
     @trip = Trip.find(params[:id])
     @cities = @trip.cities.all
     @pictures = @trip.pictures.all
@@ -48,6 +48,7 @@ class TripsController < ApplicationController
   end
 
   def update
+    # Check if it is updated
     if @trip.update_attributes(trip_params)
       flash[:success] = "Trip updated"
       redirect_to @trip
