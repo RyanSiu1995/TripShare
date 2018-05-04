@@ -1,5 +1,6 @@
+<%# Show the notice %>
 <p id="notice"><%= notice %></p>
-
+<%# Render all the current trips for this user %>
 <div class="container">
   <div class="row">
     <div class="col s12">
@@ -16,7 +17,7 @@
     </div>
   </div>
 </div>
-
+<%# To the new trip %>
 <% if user_signed_in? && (current_user.id == @user.id)%>
   <%= render "new_trip_button" %>
 <% end %>

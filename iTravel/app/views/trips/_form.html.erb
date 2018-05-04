@@ -1,41 +1,42 @@
-
+<%# Trip form %>
 <div class="col s10 offset-s1 m6 offset-m3">
   <div class="card">
     <div class="card-content">
+      <%# Bind the form to the trip object %>
       <%= form_for(@trip) do |f| %>
-
-      <% if @trip.errors.any? %>
-      <div id="error_explanation">
-        <h5><%= pluralize(@trip.errors.count, "error") %> prohibited this trip from being saved:</h5>
-
-        <ul>
-          <% @trip.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-      <% end %>
-
-      <div class="field">
-        <%= f.text_field :title, placeholder: "Name a new trip..." %>
-      </div>
-      <div class="field">
-        <%= f.text_field :country, placeholder: "Country", id: "countryInput" %>
-      </div>
-      <div class="datepicker">
-        <%= f.date_field :start_date, placeholder: "Start date" %>
-      </div>
-      <div class="datepicker">
-        <%= f.date_field :finish_date, placeholder: "Finish date" %>
-      </div>
-
-      <div class="text-center">
-        <%= f.submit "Submit", class: "btn btn-primary" %>
-      </div>
-
-      <div class="text-center">
-        <%= link_to 'Back', current_user %>
-      </div>
+        <%# If there is error, render the error message %>
+        <% if @trip.errors.any? %>
+          <div id="error_explanation">
+            <h5><%= pluralize(@trip.errors.count, "error") %> prohibited this trip from being saved:</h5>
+            <%# Iterate the error message %>
+            <ul>
+              <% @trip.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <%# The input field for the trip %>
+        <div class="field">
+          <%= f.text_field :title, placeholder: "Name a new trip..." %>
+        </div>
+        <div class="field">
+          <%= f.text_field :country, placeholder: "Country", id: "countryInput" %>
+        </div>
+        <div class="datepicker">
+          <%= f.date_field :start_date, placeholder: "Start date" %>
+        </div>
+        <div class="datepicker">
+          <%= f.date_field :finish_date, placeholder: "Finish date" %>
+        </div>
+        <%# Submit buttong %>
+        <div class="text-center">
+          <%= f.submit "Submit", class: "btn btn-primary" %>
+        </div>
+        <%# Back button %>
+        <div class="text-center">
+          <%= link_to 'Back', current_user %>
+        </div>
       <% end %>
     </div>
   </div>

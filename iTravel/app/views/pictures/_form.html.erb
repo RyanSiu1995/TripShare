@@ -1,41 +1,21 @@
 <div class="col s10 offset-s1 m6 offset-m3">
   <div class="card">
     <div class="card-content">
+      <%# Bind the form to the picture object %>
       <%= simple_form_for @picture, url: pictures_path do |f| %>
-
-      <!-- <div class="field">
-        <%= f.text_field :description, placeholder: "Description" %>
-      </div> -->
-
-      <div class="text-center">
-        <%= f.input :image, as: :file %>
-      </div>
-
-      <!-- <div class="file-field input-field">
-        <div class="btn">
-          <span>File</span>
-          <input type="file" multiple>
+        <div class="text-center">
+          <%= f.input :image, as: :file %>
         </div>
-        <div class="file-path-wrapper">
-          <input class="file-path validate" type="text" placeholder="Upload one or more files">
-          <input class="file-path validate" type="text">
-
+        <%# If it is creating a new picture, remder this hidden input %>
+        <% if action_name == "new" %>
+          <div class="field" type="hidden" value"<%= @trip.id%>" style="margin-top: 100px;">
+            <%= f.hidden_field :trip_id %>
+          </div>
+        <% end %>
+        <%# Submit button %>
+        <div class="text-center">
+          <%= f.submit "Submit",  class:"btn btn-primary"%>
         </div>
-      </div> -->
-
-
-      <% if action_name == "new" %>
-      <div class="field" type="hidden" value"<%= @trip.id%>" style="margin-top: 100px;">
-        <%= f.hidden_field :trip_id %>
-      </div>
-      <% end %>
-
-      <div class="text-center">
-        <%= f.submit "Submit",  class:"btn btn-primary"%>
-      </div>
-
-
-
       <% end %>
     </div>
   </div>

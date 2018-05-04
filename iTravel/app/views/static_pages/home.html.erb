@@ -2,10 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <%# Set the title %>
   <title> <%= yield(:title) %> | TripShare </title>
+  <%# Set the viewport %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+    <%# Render the components %>
     <%= render "index_banner" %>
     <%= render "shared/search_bar" %>
     <%= render "top_trips" %>

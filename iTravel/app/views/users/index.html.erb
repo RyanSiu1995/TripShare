@@ -1,31 +1,33 @@
-<p id="notice"><%= notice %></p>
+<%# Show the notice %>
+<p id="notice">
+  <%= notice %>
+</p>
 
 <div class="container">
   <div class="row">
     <div class="col s12">
       <h2 class='text-center'> All users </h2>
-
-          <% @users.each do |user| %>
+        <%# Show all users %>
+        <% @users.each do |user| %>
           <!-- TODO check for 0 users  -->
           <ul class="collection">
             <li class="collection-item avatar">
-              <!-- <img src="images/1.jpg" alt="" class="circle"> -->
+              <%# User icon %>
               <%= gravatar_for user, class: "circle" %>
               <span class="title"><%= link_to user.name, user %></span>
+              <%# User email %>
               <p>
                 <%= user.email %>
               </p>
               <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+              <%# Link to the edit form/ destroy the users if the user is admin %>
               <% if current_user.try(:admin?)  %>
                 <%= link_to 'Edit', edit_user_path(user)%> |
                 <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
               <% end %>
-
             </li>
           </ul>
-
-          <% end %>
-
+        <% end %>
     </div>
   </div>
 </div>

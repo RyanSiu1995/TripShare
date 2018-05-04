@@ -1,20 +1,23 @@
 <div class="container"> 
-    <div class="city">
-        <h1 class="city_name">
-            <%= @city.name %>
-        </h1>
-    </div>
-    <div class="city description">
-        <h3 class="city description">
-            <%= @city.description %>
-        </h3>
-    </div>
-    <div class="tool-bar">
-        <% if user_signed_in?%>
-            <% if current_user.id == @city.trip.user_id %>
-                <%= link_to 'Edit', edit_city_path(@city), class: "" %> | 
-            <% end %>
+  <div class="city">
+    <h1 class="city_name">
+      <%# Rendering the name of the city %>
+      <%= @city.name %>
+    </h1>
+  </div>
+  <div class="city description">
+    <%# Rendering the description %>
+    <h3 class="city description">
+      <%= @city.description %>
+    </h3>
+  </div>
+  <div class="tool-bar">
+    <%# Check if the user login for editting %>
+    <% if user_signed_in?%>
+        <% if current_user.id == @city.trip.user_id %>
+            <%= link_to 'Edit', edit_city_path(@city), class: "" %> | 
         <% end %>
-        <%= link_to 'Back', @city.trip %>
-    </div>
+    <% end %>
+    <%= link_to 'Back', @city.trip %>
+  </div>
 </div>

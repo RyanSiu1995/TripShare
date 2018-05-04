@@ -1,19 +1,22 @@
+<%# Search bar components %>
 <div class="row">
   <div class="col s6 offset-s3 searchBar">
     <div class="card-panel grey lighten-5">
       <div class="card-content">
         <div class="input-field">
+          <%# Create a form to do the query %>
           <%= form_tag(trips_path, :method => "get", id: "search") do %>
             <%= search_field_tag :search, params[:search], placeholder: "Search Trips",  id: "search", class: "autocomplete" %>
             <label for="search"><i class="material-icons">search</i></label>
             <i class="material-icons">close</i>
+            <%# Hide the submit button %>
             <%= submit_tag "Search" , :type => "hidden" %>
           <% end %>
         </div>
       </div>
-      </div>
     </div>
   </div>
+</div>
 
 <%# Script injection for initializing the autocomplete function %>
 <script>

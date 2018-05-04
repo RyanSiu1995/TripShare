@@ -1,45 +1,41 @@
 <div class="col s10 offset-s1 m6 offset-m3">
   <div class="card">
     <div class="card-content">
+      <%# Binding the form to city %>
       <%= form_for(@city) do |f| %>
-
-      <% if @city.errors.any? %>
-      <div id="error_explanation">
-        <h5><%= pluralize(@city.errors.count, "error") %> prohibited this city from being saved:</h5>
-
-        <ul>
-          <% @city.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-      <% end %>
-
-      <div class="field">
-        <%= f.text_field :name, placeholder: "Name a new city..." %>
-      </div>
-
-      <div class="field">
-        <%= f.text_field :description, placeholder: "Description" %>
-      </div>
-
-      <% if action_name == "new" %>
-        <div class="field" type="hidden" value"<%= @trip.id%>">
-          <%= f.hidden_field :trip_id %>
+        <%# Rendering the errors if there are %>
+        <% if @city.errors.any? %>
+          <div id="error_explanation">
+            <h5><%= pluralize(@city.errors.count, "error") %> prohibited this city from being saved:</h5>
+            <ul>
+              <% @city.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <%# The details of the city %>
+        <div class="field">
+          <%= f.text_field :name, placeholder: "Name a new city..." %>
+        </div>
+        <div class="field">
+          <%= f.text_field :description, placeholder: "Description" %>
+        </div>
+        <%# If it is the adding the city instead of editing, create a hidden input field %>
+        <% if action_name == "new" %>
+          <div class="field" type="hidden" value"<%= @trip.id%>">
+            <%= f.hidden_field :trip_id %>
+          </div>
+        <% end %>
+        <%# Submit Button %>
+        <div class="text-center">
+          <%= f.submit "Submit",  class:"btn btn-primary"%>
+        </div>
+        <%# Return Button to the trip %>
+        <div class="text-center">
+          <%= link_to 'Back', @city.trip %>
         </div>
       <% end %>
-
-
-      <div class="text-center">
-        <%= f.submit "Submit",  class:"btn btn-primary"%>
-      </div>
-
-      <div class="text-center">
-        <%= link_to 'Back', @city.trip %>
-      </div>
-
-      <% end %>
-
     </div>
   </div>
 </div>

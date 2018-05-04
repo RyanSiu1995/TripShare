@@ -2,23 +2,22 @@
 <html>
   <head>
     <title>TripShare</title>
+    <%# Render the meta tag %>
     <%= csrf_meta_tags %>
+    <%# Include the stylesheet %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%# Include the javascript %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <%# Set the viewport of the document %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   </head>
-
   <body>
-
     <!-- NAVBAR -->
     <%= render 'layouts/navbar' %>
-
+    <%# The main body %>
     <%= yield %>
-
     <!-- FOOTER -->
     <%= render 'layouts/footer' %>
-
   </body>
 </html>

@@ -1,7 +1,13 @@
+<%# template for one comment %>
 <li id="comment-<%= comment.id %>">
-  <span class="content"><%= comment.content %></span>
+  <span class="content">
+    <%# Render the comment body %>
+    <%= comment.content %>
+  </span>
   <span class="timestamp">
+    <%# Rendering the timestamp %>
     Posted <%= time_ago_in_words(comment.created_at) %> ago by <%= link_to comment.user.name, comment.user %>
+    <%# If the user is signed in and he is the owner, show the delete link %>
     <% if user_signed_in? %>
       <% if ((current_user.id == comment.user_id) || current_user.admin? ) %>
         <div class="right">

@@ -1,8 +1,10 @@
+<%# Top trips %>
 <h2 class="center"> Top <%= @top_trips.size %> trips </h2>
 
 <div class="container">
   <div class="row">
     <div class="cards-container">
+      <%# Rendering the top trip component %>
       <%= render @top_trips %>
     </div>
   </div>

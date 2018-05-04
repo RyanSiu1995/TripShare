@@ -1,32 +1,31 @@
-    <div class="card s12">
-      <div class="card-image">
-        <%=image_tag("2.jpg", border: 0)%> <!-- TODO  insert main image of trip, otherweise user default -->
-        <span class="card-title"><%= trip.title %></span>
-      </div>
-      <div class="card-content">
-        <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-          <span class="timestamp">
-            Posted <%= time_ago_in_words(trip.created_at) %> ago.
-          </span>
-        </div>
-        <div class="card-action">
-          <span>
-            <%= link_to "More", trip %>
-          </span>
-
-          <span class="right">
-            <%= trip.cached_votes_total %>
-            <i class="material-icons right">favorite</i>
-
-          </span>
-
-          <!-- TODO Checks that only the owner of the resource can delete the post-->
-          <% if user_signed_in?  %>
-            <% if (current_user.id == trip.user_id) %>
-            <%= link_to "delete", trip, method: :delete, data: { confirm: "You sure?" } %>
-            <% end %>
-          <% end %>
-
-        </div>
-      </div>
+<div class="card s12">
+  <div class="card-image">
+    <%=image_tag("2.jpg", border: 0)%> <!-- TODO  insert main image of trip, otherweise user default -->
+    <span class="card-title"><%= trip.title %></span>
+  </div>
+  <div class="card-content">
+    <p>I am a very simple card. I am good at containing small bits of information.
+      I am convenient because I require little markup to use effectively.</p>
+    <%# Rendering the timestamp %>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(trip.created_at) %> ago.
+    </span>
+  </div>
+  <div class="card-action">
+    <%# Link the trip %>
+    <span>
+      <%= link_to "More", trip %>
+    </span>
+    <%# Add the upvote button %>
+    <span class="right">
+      <%= trip.cached_votes_total %>
+      <i class="material-icons right">favorite</i>
+    </span>
+    <!-- TODO Checks that only the owner of the resource can delete the post-->
+    <% if user_signed_in?  %>
+      <% if (current_user.id == trip.user_id) %>
+      <%= link_to "delete", trip, method: :delete, data: { confirm: "You sure?" } %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

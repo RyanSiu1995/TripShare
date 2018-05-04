@@ -1,9 +1,10 @@
+<%# Adding a new detail to trip %>
 <div class="fixed-action-btn floating-button">
   <a class="btn-floating btn-large red">
     <i class="large material-icons">add</i>
   </a>
   <ul class="floating-sub-button">
-
+    <%# Link to the picture creation %>
     <li>
       <%= button_to raw("picture"),
       {:controller => "pictures", :action => "new"},
@@ -11,17 +12,15 @@
       class:"btn btn-floating btn-large blue",
         'data-position':"left",
         'data-tooltip': "new image".humanize%>
-
-      </li>
-
-      <li>
-        <%= button_to raw("city"),
-        {:controller => "cities", :action => "new"},
-        :method=>:get, params: { id: @trip.id },
-        class:"btn btn-floating btn-large blue",
-          'data-position': "left",
-          'data-tooltip': "new image".humanize%>
-        </li>
-
-      </ul>
-    </div>
+    </li>
+    <%# Link to the city creation %>
+    <li>
+      <%= button_to raw("city"),
+      {:controller => "cities", :action => "new"},
+      :method=>:get, params: { id: @trip.id },
+      class:"btn btn-floating btn-large blue",
+        'data-position': "left",
+        'data-tooltip': "new image".humanize%>
+    </li>
+  </ul>
+</div>

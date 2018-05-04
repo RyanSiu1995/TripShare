@@ -1,4 +1,7 @@
+<%# Picture components %>
 <div class="item-container">
+  <%# Image tag %>
   <%= (image_tag picture.image.url, class: "materialboxed") %>
+  <%# Image description %>
   <%= (content_tag :div ,picture.description, class: "description") %>
 </div>

@@ -1,23 +1,24 @@
-
-  <li id="city-<%= city.id %>">
-    <div class="collapsible-header"><i class="material-icons">location_city</i>
-      <%= city.name %>
-      <span class="timestamp right"> Created <%= time_ago_in_words(city.created_at) %> ago.</span>
-
-    </div>
-    <div class="collapsible-body">
-      <%= city.description %>
-      <div class="right">
-          <%= link_to 'More', city, class: "" %>
-
-          <!-- TODO Checks that only the owner of the resource can delete the post-->
-          <% if user_signed_in?  %>
-            <% if (current_user.id == city.trip.user_id) %>
+<%# Dynamically add the id of the city %>
+<li id="city-<%= city.id %>">
+  <div class="collapsible-header"><i class="material-icons">location_city</i>
+    <%# Rendering the city name %>
+    <%= city.name %>
+    <%# Calling the function time_ago_in_words to render the timestamp properly %>
+    <span class="timestamp right"> Created <%= time_ago_in_words(city.created_at) %> ago.</span>
+  </div>
+  <div class="collapsible-body">
+    <%# Rendering the description %>
+    <%= city.description %>
+    <div class="right">
+        <%# The link to query details %>
+        <%= link_to 'More', city, class: "" %>
+        <!-- TODO Checks that only the owner of the resource can delete or edit the post-->
+        <% if user_signed_in?  %>
+          <% if (current_user.id == city.trip.user_id) %>
             <%= link_to '| Edit', edit_city_path(city), class: "" %>
             <%= link_to "| Delete", city, method: :delete, data: { confirm: "You sure?" } %>
-            <% end %>
           <% end %>
-
-      </div>
+        <% end %>
     </div>
-  </li>
+  </div>
+</li>

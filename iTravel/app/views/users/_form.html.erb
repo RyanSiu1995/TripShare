@@ -1,3 +1,4 @@
+<%# If it is not the orginal user, show the prohibit message %>
 <% if user.id != current_user.id %>
   <div class="card">
     <div class="card-content">
@@ -9,8 +10,11 @@
       </div>
     </div>
   </div>
+<%# If it is the user, render the form of edit %>
 <% else %>
+  <%# Bind the form to the user object %>
   <%= form_with(model: user, local: true) do |form| %>
+    <%# If there is an error, show it to he user %>
     <% if user.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -21,18 +25,19 @@
         </ul>
       </div>
     <% end %>
+    <%# The core of the form %>
     <div class="card">
       <div class="card-content">
+        <%# The input field of the form %>
         <div class="field">
           <%= form.label :name %>
           <%= form.text_field :name, id: :user_name %>
         </div>
-
         <div class="field">
           <%= form.label :email %>
           <%= form.text_field :email, id: :user_email, type: "email" %>
         </div>
-
+        <%# Submit button %>
         <div class="actions text-center">
           <%= form.submit class: "btn-large btn-large-main-color waves-effect waves-light"%>
         </div>
